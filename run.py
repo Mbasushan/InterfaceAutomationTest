@@ -6,7 +6,7 @@ import time
 import unittest
 import sys
 
-from common.HTMLTestRunner import HTMLTestRunner_py3
+from com.HTMLTestRunner import HTMLTestRunner_py3
 
 test_dir = './testCase'
 discover = unittest.defaultTestLoader.discover(start_dir='./testCase', pattern="*.py")
