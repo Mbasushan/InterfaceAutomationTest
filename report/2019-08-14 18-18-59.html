@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+
+    
+<style type="text/css" media="screen">
+    body        { font-family: Microsoft YaHei,Consolas,arial,sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        /**font-size: 16pt;
+        color: gray;*/
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+    a.popup_link:hover {
+        color: red;
+    }
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #dff0d8;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #5cb85c; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+    #div_base {
+                padding: 20px;
+    }
+</style>
+
+
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level == 2 || level == 0) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level < 2) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+        }      
+    }
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                //document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState == 'block' || displayState == '' ) {
+
+            details_div.style.display = 'none'
+        }
+        else {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+    }
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>接口自动化测试报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2019-08-14 18:18:59</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:02.621704</p>
+<p class='attribute'><strong>测试结果:</strong> 通过 18 通过率= 100.00%</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>执行人：sxs</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+
+    <p id='show_detail_line'>
+        <a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
+        <a class="btn btn-danger" href='javascript:showCase(1)'>未通过{ 0 }</a>
+        <a class="btn btn-success" href='javascript:showCase(2)'>通过{ 18 }</a>
+        <a class="btn btn-info" href='javascript:showCase(3)'>所有{ 18 }</a>        
+    </p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row' class="text-center success">
+            <td>用例集/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='passClass'>
+        <td class="text-center">ketang.homePage.banner.Banner</td>
+        <td class="text-center">4</td>
+        <td class="text-center">4</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><a href="javascript:showClassDetail('c1',4)">详细</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_android: Android课堂首页banner广告</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+    <div id='div_pt1.1' class="collapse in">
+        <pre>pt1.1: {'data': [{'url': 'http://ke.test.mbalib.com/vip/topic?from_source=app', 'image': 'http://www.test.mbalib.com/uploads/ad/4/40/a3b55d080e767ca8091bfbc39e8258e4.png', 'title': 'lunb', 'type': 'ad', 'data': {'url': 'http://ke.test.mbalib.com/vip/topic?from_source=app'}}]}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_ios: ios课堂首页banner广告</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+    <div id='div_pt1.2' class="collapse in">
+        <pre>pt1.2: {'data': [{'url': 'http://ke.test.mbalib.com/vip/topic?from_source=app', 'image': 'http://www.test.mbalib.com/uploads/ad/4/40/a3b55d080e767ca8091bfbc39e8258e4.png', 'title': 'lunb', 'type': 'ad', 'data': {'url': 'http://ke.test.mbalib.com/vip/topic?from_source=app'}}]}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_ios_fresh: ios专业版课堂首页banner广告</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a>
+    <div id='div_pt1.3' class="collapse in">
+        <pre>pt1.3: {'data': [{'url': 'http://ke.test.mbalib.com/vip/topic?from_source=app', 'image': 'http://www.test.mbalib.com/uploads/ad/4/40/a3b55d080e767ca8091bfbc39e8258e4.png', 'title': 'lunb', 'type': 'ad', 'data': {'url': 'http://ke.test.mbalib.com/vip/topic?from_source=app'}}]}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_pc: pc课堂首页banner广告</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.4')" >
+        通过</a>
+    <div id='div_pt1.4' class="collapse in">
+        <pre>pt1.4: {'data': [{'image': 'http://www.test.mbalib.com/uploads/ad/c/ce/9e8c9f4deb8954a68e4e4afc3aa3e378.png', 'title': 'webktlb', 'type': 'ketang_vip', 'data': {'params': {'from_source': 'ktlb'}}, 'params': {'from_source': 'ktlb'}}]}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td class="text-center">ketang.homePage.category.Category</td>
+        <td class="text-center">1</td>
+        <td class="text-center">1</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><a href="javascript:showClassDetail('c2',1)">详细</a></td>
+    </tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_getCategory: 课堂首页获取分类数据</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt2.1')" >
+        通过</a>
+    <div id='div_pt2.1' class="collapse in">
+        <pre>pt2.1: 结果： [{'title': '推荐'}, {'title': '自我管理', 'cid': '10', 'image': 'http://ke.test.mbalib.com/uploads/category/5/50/5083c8bc77181900cba6050cd82a95c2.jpg'}, {'title': '管理技能', 'cid': '8', 'image': 'http://ke.test.mbalib.com/uploads/category/b/b1/b1aa07eb0b7a9f6ffd7803d5599e1ef6.png'}, {'title': '营销管理', 'cid': '7', 'image': ''}, {'title': '财务管理', 'cid': '6', 'image': ''}, {'title': '生产管理', 'cid': '5', 'image': ''}, {'title': 'MBA商学院', 'cid': '1', 'image': 'http://ke.test.mbalib.com/uploads/category/2/24/2499257dd36ad802175a2f5a07f96d8e.png'}, {'title': '通用管理', 'cid': '3', 'image': ''}, {'title': '人力资源管理', 'cid': '2', 'image': ''}, {'title': '战略管理', 'cid': '4', 'image': ''}]
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td class="text-center">ketang.homePage.freeCourse.FreeCourse</td>
+        <td class="text-center">2</td>
+        <td class="text-center">2</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><a href="javascript:showClassDetail('c3',2)">详细</a></td>
+    </tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_getfreeCourse: 课堂首页获取免费课程-到第10个数据</div></td>
+    <td colspan='5' align='center' style="color:#428bca">通过</td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_getfreeCourse_page: 课堂首页获取免费课程-分页</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt3.2')" >
+        通过</a>
+    <div id='div_pt3.2' class="collapse in">
+        <pre>pt3.2: 总的免费课程数: 67
+一页10条，分页次数： 7
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td class="text-center">ketang.homePage.hengFu.HengFu</td>
+        <td class="text-center">5</td>
+        <td class="text-center">5</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><a href="javascript:showClassDetail('c4',5)">详细</a></td>
+    </tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_android: Android课堂首页横幅广告</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt4.1')" >
+        通过</a>
+    <div id='div_pt4.1' class="collapse in">
+        <pre>pt4.1: {'data': [{'url': 'http://ke.test.mbalib.com/column/259?from_source=app', 'image': 'http://www.test.mbalib.com/uploads/ad/6/6a/b348604235111e50d5a895bfabb313d8.png', 'title': '课堂横幅', 'type': 'ke_column', 'data': {'cid': '259', 'params': {'from_source': 'app', 'cid': '259'}}, 'params': {'from_source': 'app', 'cid': '259'}}]}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_ios: ios课堂首页横幅广告</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt4.2')" >
+        通过</a>
+    <div id='div_pt4.2' class="collapse in">
+        <pre>pt4.2: {'data': [{'url': 'http://ke.test.mbalib.com/column/259?from_source=app', 'image': 'http://www.test.mbalib.com/uploads/ad/6/6a/b348604235111e50d5a895bfabb313d8.png', 'title': '课堂横幅', 'type': 'ke_column', 'data': {'cid': '259', 'params': {'from_source': 'app', 'cid': '259'}}, 'params': {'from_source': 'app', 'cid': '259'}}]}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_ios_fresh: ios专业版课堂首页横幅广告</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt4.3')" >
+        通过</a>
+    <div id='div_pt4.3' class="collapse in">
+        <pre>pt4.3: {'data': [{'url': 'http://ke.test.mbalib.com/column/259?from_source=app', 'image': 'http://www.test.mbalib.com/uploads/ad/6/6a/b348604235111e50d5a895bfabb313d8.png', 'title': '课堂横幅', 'type': 'ke_column', 'data': {'cid': '259', 'params': {'from_source': 'app', 'cid': '259'}}, 'params': {'from_source': 'app', 'cid': '259'}}]}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_ke1_null: 首页横幅广告-无数据</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt4.4')" >
+        通过</a>
+    <div id='div_pt4.4' class="collapse in">
+        <pre>pt4.4: 有数据，修改数据
+text: {'data': []}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_pc: pc课堂首页横幅广告-有数据</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt4.5')" >
+        通过</a>
+    <div id='div_pt4.5' class="collapse in">
+        <pre>pt4.5: data: 0
+{'data': [{'url': 'http://ke.test.mbalib.com/column/259?from_source=app', 'image': 'http://www.test.mbalib.com/uploads/ad/6/6a/b348604235111e50d5a895bfabb313d8.png', 'title': '课堂横幅', 'type': 'ke_column', 'data': {'cid': '259', 'params': {'from_source': 'app', 'cid': '259'}}, 'params': {'from_source': 'app', 'cid': '259'}}]}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td class="text-center">ketang.homePage.latestCourse.LatestCourse</td>
+        <td class="text-center">1</td>
+        <td class="text-center">1</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><a href="javascript:showClassDetail('c5',1)">详细</a></td>
+    </tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_getLatest: 课堂首页获取新课上架</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt5.1')" >
+        通过</a>
+    <div id='div_pt5.1' class="collapse in">
+        <pre>pt5.1: 新课上架课程数： 2
+结果： [{'cid': '258', 'logo': 'http://ke.test.mbalib.com/uploads/column/d/db/dbedc4707a7b2039a4b18ca1e59ec209.png', 'square_logo': 'http://ke.test.mbalib.com/uploads/column/7/71/713728a0095bb4f71abd5bab557d12d3.jpg', 'description': '最有趣的朝代、最逗比的皇帝、最惨烈的宫斗、最欢乐的解说……', 'title': '《明朝那些事儿》精华解读：生动演绎“明朝皇帝图鉴”', 'price': '39.00', 'signup': '11', 'learn_times': 270, 'courses': '31', 'column_tag': '朱元璋,建文帝,嘉靖帝,明武宗,大明王朝', 'category_id': '10', 'onlinetime': '', 'exist_coupon': 1, 'type': 'ke_column', 'column_vip_free': '3', 'original_price': '59.00', 'vip_price': '0', 'coupon_img': 'https://img.mbalib.com/ketang/images/yh.png'}, {'cid': '1018', 'logo': 'http://ke.test.mbalib.com/uploads/package/d/df/dff835a62aede31c0d96363b787418e9.png', 'square_logo': '', 'description': '心理学提升系列课', 'title': '职场心理能力提升系统班', 'price': '674.00', 'signup': '11', 'learn_times': 147, 'courses': '2', 'package_tag': '拼团课程包', 'onlinetime': '20190531134626', 'category_id': '10', 'exist_coupon': 0, 'type': 'ke_package', 'package_vip_free': '2', 'original_price': '674.00', 'vip_price': '0'}]
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td class="text-center">ketang.homePage.themeList.ThemeList</td>
+        <td class="text-center">5</td>
+        <td class="text-center">5</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><a href="javascript:showClassDetail('c6',5)">详细</a></td>
+    </tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_category: 课堂首页分类入口</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt6.1')" >
+        通过</a>
+    <div id='div_pt6.1' class="collapse in">
+        <pre>pt6.1: 结果： [{'image': 'http://ke.test.mbalib.com/uploads/theme/4/4f/4f57d4bea3add4ca092fa554190c5f91.png', 'title': '管理技能', 'type': 'ke_categorylist', 'data': {'tid': '8'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/5/56/5645e67bb98029615b59286d93740313.png', 'title': '自我管理', 'type': 'ke_categorylist', 'data': {'tid': '10'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/d/d0/d0dd64b16267788871ed7a2e0f780112.png', 'title': '人力资源', 'type': 'ke_categorylist', 'data': {'tid': '2'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/f/f0/f09890ee39de78b4bbb33dc34cc66f80.png', 'title': '财富管理', 'type': 'ke_categorylist', 'data': {'tid': '6'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/9/9c/9c9001c693dff5c215a5915d6038bd44.png', 'title': '战略管理', 'type': 'ke_categorylist', 'data': {'tid': '4'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/2/2d/2dc4a8840a8fea22c205fa955b63e00f.png', 'title': '营销管理', 'type': 'ke_categorylist', 'data': {'tid': '7'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/e/e1/e1ac59cdda8c3466be6af19ae7bee260.png', 'title': '生产管理', 'type': 'ke_categorylist', 'data': {'tid': '5'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/4/4b/4b54f371764a5f96472fd6e10c6bf221.png', 'title': 'MBA商学院', 'type': 'ke_categorylist', 'data': {'tid': '1'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/b/b3/b3ca0655567fd6a5fa4a113ae27a0d74.png', 'title': 'VIP专区', 'type': 'ke_viplist', 'data': {}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/f/fb/fbca3f8c5fea4d0e1fe6c546a9912c2f.png', 'title': '免费专区', 'type': 'ke_freezonelist', 'data': {}}]
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_category1_null: 课堂首页分类入口-无数据</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt6.2')" >
+        通过</a>
+    <div id='div_pt6.2' class="collapse in">
+        <pre>pt6.2: 结果： []
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt6.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_scene: 课堂首页主题场景列表-有数据</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt6.3')" >
+        通过</a>
+    <div id='div_pt6.3' class="collapse in">
+        <pre>pt6.3: 3
+总的主题场景数： 3
+第 1个主题场景
+结果： [{'url': 'http://ke.test.mbalib.com/column/58', 'image': 'http://ke.test.mbalib.com/uploads/theme/7/75/7568f80f8dd9b9ec30d192251fa78e00.png', 'title': '1', 'type': 'ke_column', 'data': {'cid': '58', 'params': {'cid': '58'}}, 'params': {'cid': '58'}}, {'url': 'http://ke.test.mbalib.com/column/95', 'image': 'http://ke.test.mbalib.com/uploads/theme/e/e5/e5cd9ca2ad23a18c82917983eb99e822.png', 'title': '2', 'type': 'ke_column', 'data': {'cid': '95', 'params': {'cid': '95'}}, 'params': {'cid': '95'}}, {'url': 'http://ke.test.mbalib.com/column/89', 'image': 'http://ke.test.mbalib.com/uploads/theme/3/3d/3d65a2fd83fd60abd442ed1a8c0b3127.png', 'title': '3', 'type': 'ke_column', 'data': {'cid': '89', 'params': {'cid': '89'}}, 'params': {'cid': '89'}}, {'url': 'http://ke.test.mbalib.com/column/90', 'image': 'http://ke.test.mbalib.com/uploads/theme/3/34/347a16329d9d25c377145b607a64e269.png', 'title': '巧用思维导图', 'type': 'ke_column', 'data': {'cid': '90', 'params': {'cid': '90'}}, 'params': {'cid': '90'}}]
+第 2个主题场景
+结果： [{'url': 'http://ke.test.mbalib.com/column/58', 'image': 'http://ke.test.mbalib.com/uploads/theme/b/b5/b5928b3b0b099b0406a8c4236a5aa8c4.jpg', 'title': '1', 'type': 'ke_column', 'data': {'cid': '58', 'params': {'cid': '58'}}, 'params': {'cid': '58'}}, {'url': 'http://ke.test.mbalib.com/column/58', 'image': 'http://ke.test.mbalib.com/uploads/theme/c/cc/ccdbde170772c5e025e00bed5a79daae.png', 'title': '2', 'type': 'ke_column', 'data': {'cid': '58', 'params': {'cid': '58'}}, 'params': {'cid': '58'}}, {'url': 'http://ke.test.mbalib.com/column/58', 'image': 'http://ke.test.mbalib.com/uploads/theme/5/51/514ffcbbcc1ca3cae97db55b35583dba.png', 'title': '3', 'type': 'ke_column', 'data': {'cid': '58', 'params': {'cid': '58'}}, 'params': {'cid': '58'}}, {'url': 'http://ke.test.mbalib.com/column/63', 'image': 'http://ke.test.mbalib.com/uploads/theme/2/20/2052fe0d3de8b6d0de1e2fc4fea2afa8.jpg', 'title': '5', 'type': 'ke_column', 'data': {'cid': '63', 'params': {'cid': '63'}}, 'params': {'cid': '63'}}, {'url': 'http://ke.test.mbalib.com/column/62', 'image': 'http://ke.test.mbalib.com/uploads/theme/2/21/2118cd3ebfe5e076722cf7633f58e939.png', 'title': '5', 'type': 'ke_column', 'data': {'cid': '62', 'params': {'cid': '62'}}, 'params': {'cid': '62'}}, {'url': 'http://ke.test.mbalib.com/column/61', 'image': 'http://ke.test.mbalib.com/uploads/theme/e/e5/e5b81dee85d69aa464c96806fd29da4f.png', 'title': '6', 'type': 'ke_column', 'data': {'cid': '61', 'params': {'cid': '61'}}, 'params': {'cid': '61'}}, {'url': 'http://ke.test.mbalib.com/column/60', 'image': 'http://ke.test.mbalib.com/uploads/theme/1/12/1267540c7a57cc804ac675be472c3f1c.png', 'title': '8', 'type': 'ke_column', 'data': {'cid': '60', 'params': {'cid': '60'}}, 'params': {'cid': '60'}}, {'url': 'http://ke.test.mbalib.com/column/61', 'image': 'http://ke.test.mbalib.com/uploads/theme/5/5d/5dcc01905fdc8fc41a48eca68f2da2a1.jpg', 'title': '7', 'type': 'ke_column', 'data': {'cid': '61', 'params': {'cid': '61'}}, 'params': {'cid': '61'}}, {'url': 'http://ke.test.mbalib.com/column/258', 'image': 'http://ke.test.mbalib.com/uploads/theme/b/ba/ba1e607c1a6df9b6a2fcd3f505ce2038.png', 'title': '明朝那些事', 'type': 'ke_column', 'data': {'cid': '258', 'params': {'cid': '258'}}, 'params': {'cid': '258'}}, {'url': 'http://ke.test.mbalib.com/column/102', 'image': 'http://ke.test.mbalib.com/uploads/theme/b/bb/bb9492f6b6fe5d2f23ab91a5f9a2d8b0.png', 'title': '顾问式销售12讲', 'type': 'ke_column', 'data': {'cid': '102', 'params': {'cid': '102'}}, 'params': {'cid': '102'}}, {'url': 'http://ke.test.mbalib.com/column/102', 'image': 'http://ke.test.mbalib.com/uploads/theme/e/ed/ed28f4d9716e9e86267157cc5e6d36ec.png', 'title': '顾问式销售12讲', 'type': 'ke_column', 'data': {'cid': '102', 'params': {'cid': '102'}}, 'params': {'cid': '102'}}, {'url': 'http://ke.test.mbalib.com/column/219', 'image': 'http://ke.test.mbalib.com/uploads/theme/9/9f/9fc4a558471f01f35916644ea7eb2b0e.png', 'title': '20堂顶级销售管理实战课——如何打造高绩效、高战斗力的销售团队', 'type': 'ke_column', 'data': {'cid': '219', 'params': {'cid': '219'}}, 'params': {'cid': '219'}}]
+第 3个主题场景
+结果： [{'url': 'http://ke.test.mbalib.com/column/258', 'image': 'http://ke.test.mbalib.com/uploads/theme/8/8d/8d20eb2a18dce56f8827e04ae2abdb64.jpg', 'title': '明朝那些事儿', 'type': 'ke_column', 'data': {'cid': '258', 'params': {'cid': '258'}}, 'params': {'cid': '258'}}, {'url': 'http://ke.test.mbalib.com/column/95', 'image': '', 'title': '50个源自硅谷的【工作方法论】，带你玩转职场发展', 'type': 'ke_column', 'data': {'cid': '95', 'params': {'cid': '95'}}, 'params': {'cid': '95'}}]
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt6.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_stage: 课堂首页学习阶梯入口-有数据</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt6.4')" >
+        通过</a>
+    <div id='div_pt6.4' class="collapse in">
+        <pre>pt6.4: 结果： [{'image': 'http://ke.test.mbalib.com/uploads/theme/3/3a/3ae8480564a0f92d54033d27f811e7ea.png', 'title': '个人能力提升', 'type': 'ke_study_stage', 'data': {'tid': '1'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/6/6e/6e6906dedfd981b78d6ae2b9ee020b20.png', 'title': '岗位管理能力提升', 'type': 'ke_study_stage', 'data': {'tid': '2'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/9/9d/9de60899144b88083d308b92329040c5.png', 'title': '管理技能提升', 'type': 'ke_study_stage', 'data': {'tid': '3'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/7/76/76146afa628dda4e5a8c98c2fd8320b4.png', 'title': '战略能力提升', 'type': 'ke_study_stage', 'data': {'tid': '4'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/b/b3/b3d526bda93a4209a284646845b74ae4.png', 'title': '格局视野提升', 'type': 'ke_study_stage', 'data': {'tid': '5'}}, {'image': 'http://ke.test.mbalib.com/uploads/theme/b/b7/b7d15f1cca1982265f960b4ef2cd95c4.png', 'title': '商务考察', 'type': 'ke_study_stage', 'data': {'tid': '6'}}]
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt6.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_stage1_null: 课堂首页学习阶梯入口-无数据</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt6.5')" >
+        通过</a>
+    <div id='div_pt6.5' class="collapse in">
+        <pre>pt6.5: 结果： []
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+        <tr id='total_row' class="text-center active">
+            <td>总计</td>
+            <td>18</td>
+            <td>18</td>
+            <td>0</td>
+            <td>0</td>
+            <td>通过率：100.00%</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:18, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:0, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>
