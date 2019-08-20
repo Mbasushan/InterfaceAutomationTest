@@ -22,11 +22,8 @@ class ThemeList(unittest.TestCase):
             cs1 = conn.cursor()
             # 查询主题信息
             query = "update  ketang_theme set theme_state='enable' WHERE theme_key='entrance'"
-            try:
-                cs1.execute(query)
-                conn.commit()
-            except:
-                conn.rollback()
+            cs1.execute(query)
+            conn.commit()
             # 关闭cursor对象
             cs1.close()
             # 关闭connection对象
@@ -47,11 +44,8 @@ class ThemeList(unittest.TestCase):
             cs1 = conn.cursor()
             # 查询主题信息
             query = "update  ketang_theme set theme_state='disable' WHERE theme_key='entrance'"
-            try:
-                cs1.execute(query)
-                conn.commit()
-            except:
-                conn.rollback()
+            cs1.execute(query)
+            conn.commit()
             # 关闭cursor对象
             cs1.close()
             # 关闭connection对象
@@ -71,11 +65,8 @@ class ThemeList(unittest.TestCase):
             cs1 = conn.cursor()
             # 查询主题信息
             query = "update  ketang_theme set theme_state='enable' WHERE theme_key='stage'"
-            try:
-                cs1.execute(query)
-                conn.commit()
-            except:
-                conn.rollback()
+            cs1.execute(query)
+            conn.commit()
             # 关闭cursor对象
             cs1.close()
             # 关闭connection对象
@@ -96,11 +87,8 @@ class ThemeList(unittest.TestCase):
             cs1 = conn.cursor()
             # 查询主题信息
             query = "update  ketang_theme set theme_state='disable' WHERE theme_key='stage'"
-            try:
-                cs1.execute(query)
-                conn.commit()
-            except:
-                conn.rollback()
+            cs1.execute(query)
+            conn.commit()
             # 关闭cursor对象
             cs1.close()
             # 关闭connection对象
