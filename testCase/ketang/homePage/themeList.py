@@ -31,14 +31,16 @@ class ThemeList(unittest.TestCase):
             cs1.close()
             # 关闭connection对象
             conn.close()
-        response = requests.get(self.base_url,params={"key":"entrance","purge":"ture"})
+        response = requests.get(self.base_url,params={"key":"entrance","purge":"true"})
         result = response.json()
         print("结果：", result['data'])
 
     def test_01_category_null(self):
         """课堂首页分类入口-无数据"""
         data=list("entrance")
-        if len(data)!=0:
+        if len(data) == 0:
+            print("未有数据")
+        else:
             # 连接数据库
             conn = mySqlConnect.my_db()
             # 获取cursor对象
@@ -54,7 +56,7 @@ class ThemeList(unittest.TestCase):
             cs1.close()
             # 关闭connection对象
             conn.close()
-        response = requests.get(self.base_url, params={"key":"entrance","purge":"ture"})
+        response = requests.get(self.base_url, params={"key":"entrance","purge":"true"})
         result = response.json()
         print("结果：", result['data'])
         self.assertEqual(len(result['data']), 0)
@@ -78,14 +80,16 @@ class ThemeList(unittest.TestCase):
             cs1.close()
             # 关闭connection对象
             conn.close()
-        response = requests.get(self.base_url, params={"key": "stage", "purge": "ture"})
+        response = requests.get(self.base_url, params={"key": "stage", "purge": "true"})
         result = response.json()
         print("结果：", result['data'])
 
     def test_01_stage_null(self):
         """课堂首页学习阶梯入口-无数据"""
         data = list("stage")
-        if len(data) != 0:
+        if len(data) == 0:
+            print("未有数据")
+        else:
             # 连接数据库
             conn = mySqlConnect.my_db()
             # 获取cursor对象
@@ -101,11 +105,10 @@ class ThemeList(unittest.TestCase):
             cs1.close()
             # 关闭connection对象
             conn.close()
-        response = requests.get(self.base_url, params={"key": "stage", "purge": "ture"})
+        response = requests.get(self.base_url, params={"key": "stage", "purge": "true"})
         result = response.json()
         print("结果：", result['data'])
         self.assertEqual(len(result['data']), 0)
-
 
     def test_scene(self):
         """课堂首页主题场景列表-有数据"""
