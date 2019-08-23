@@ -6,7 +6,7 @@ import json
 import requests
 
 
-def getToken(self):
+def getToken():
     url = 'http://passport.test.mbalib.com/api/login'
     header = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
     data = {'username': 'Sxs1', 'password': '123456'}

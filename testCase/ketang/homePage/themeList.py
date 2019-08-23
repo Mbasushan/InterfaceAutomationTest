@@ -22,8 +22,11 @@ class ThemeList(unittest.TestCase):
             cs1 = conn.cursor()
             # 查询主题信息
             query = "update  ketang_theme set theme_state='enable' WHERE theme_key='entrance'"
-            cs1.execute(query)
-            conn.commit()
+            try:
+                cs1.execute(query)
+                conn.commit()
+            except:
+                conn.rollback()
             # 关闭cursor对象
             cs1.close()
             # 关闭connection对象
@@ -35,17 +38,18 @@ class ThemeList(unittest.TestCase):
     def test_01_category_null(self):
         """课堂首页分类入口-无数据"""
         data=list("entrance")
-        if len(data) == 0:
-            print("未有数据")
-        else:
+        if len(data)!=0:
             # 连接数据库
             conn = mySqlConnect.my_db()
             # 获取cursor对象
             cs1 = conn.cursor()
             # 查询主题信息
             query = "update  ketang_theme set theme_state='disable' WHERE theme_key='entrance'"
-            cs1.execute(query)
-            conn.commit()
+            try:
+                cs1.execute(query)
+                conn.commit()
+            except:
+                conn.rollback()
             # 关闭cursor对象
             cs1.close()
             # 关闭connection对象
@@ -65,8 +69,11 @@ class ThemeList(unittest.TestCase):
             cs1 = conn.cursor()
             # 查询主题信息
             query = "update  ketang_theme set theme_state='enable' WHERE theme_key='stage'"
-            cs1.execute(query)
-            conn.commit()
+            try:
+                cs1.execute(query)
+                conn.commit()
+            except:
+                conn.rollback()
             # 关闭cursor对象
             cs1.close()
             # 关闭connection对象
@@ -78,17 +85,18 @@ class ThemeList(unittest.TestCase):
     def test_01_stage_null(self):
         """课堂首页学习阶梯入口-无数据"""
         data = list("stage")
-        if len(data) == 0:
-            print("未有数据")
-        else:
+        if len(data) != 0:
             # 连接数据库
             conn = mySqlConnect.my_db()
             # 获取cursor对象
             cs1 = conn.cursor()
             # 查询主题信息
             query = "update  ketang_theme set theme_state='disable' WHERE theme_key='stage'"
-            cs1.execute(query)
-            conn.commit()
+            try:
+                cs1.execute(query)
+                conn.commit()
+            except:
+                conn.rollback()
             # 关闭cursor对象
             cs1.close()
             # 关闭connection对象
@@ -97,6 +105,7 @@ class ThemeList(unittest.TestCase):
         result = response.json()
         print("结果：", result['data'])
         self.assertEqual(len(result['data']), 0)
+
 
     def test_scene(self):
         """课堂首页主题场景列表-有数据"""
@@ -120,7 +129,7 @@ class ThemeList(unittest.TestCase):
         size=len(data)
         print("总的主题场景数：",size)
         url='http://ke.test.mbalib.com/theme/getscene'
-        response = requests.get(url, params={"purge": "ture"})
+        response = requests.get(url, params={"purge": "true"})
         result = response.json()
         print("结果：", result['data'])
 

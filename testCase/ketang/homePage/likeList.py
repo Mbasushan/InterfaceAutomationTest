@@ -11,7 +11,7 @@ class LikeList(unittest.TestCase):
     def test_likeList_login(self):
         """课堂首页【猜你喜欢】列表-登录情况下"""
         url='http://ke.test.mbalib.com/list/getlike'
-        access_token=Token.getToken(self)
+        access_token=Token.getToken()
         params={"access_token":access_token,"start":0,"num":10}
         response = requests.post(url,params=params)
         result = response.json()
