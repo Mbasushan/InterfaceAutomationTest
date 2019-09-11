@@ -3,6 +3,9 @@
 import unittest
 import requests
 import testCase.common.getToken as getToken
+import db_fixture.mysql_db as mySqlConnect
+from testCase.common import getTime
+
 
 #大咖场景音频列表
 class SceneAduioList(unittest.TestCase):
@@ -12,10 +15,11 @@ class SceneAduioList(unittest.TestCase):
 
     def test_getSceneAduioList(self):
         """大咖场景音频列表-用户是非vip"""
+        access_token = getToken.getToken()
         sceneList=get_sceneIdList()
         for i in range(len(sceneList)):
             scene_id=sceneList[i]
-            params={"scene_id":scene_id,"member":"no"}
+            params={"scene_id":scene_id,"member":"no","access_token":access_token}
             response = requests.get(self.base_url,params)
             reslut = response.json()
             print("场景音频数:",len(reslut['data']))
@@ -38,6 +42,13 @@ class SceneAduioList(unittest.TestCase):
             params={"scene_id":scene_id,"member":"yes","access_token":access_token}
             response = requests.get(self.base_url,params)
             reslut = response.json()
+            #判断用户是否vip过期，过期则修改到期时间
+            if 'error' in reslut:
+                if reslut['error']=='您还未开通会员或者您的会员已过期':
+                    update_vipTime()
+                    response = requests.get(self.base_url, params)
+                    reslut = response.json()
+                print(reslut)
             print("场景音频数:",len(reslut['data']))
             self.assertEqual(reslut['count'],len(reslut['data']))
             print("场景下的音频详情：")
@@ -87,3 +98,22 @@ def get_sceneIdList():
     for i in range(len(reslut['data'])):
         sceneList.append(reslut['data'][i]['scene_id'])
     return sceneList
+
+#更新会员时间
+def update_vipTime():
+    time=getTime.now_time('%Y%m%d235959')
+    # 连接数据库
+    conn = mySqlConnect.my_db()
+    # 获取cursor对象
+    cs1 = conn.cursor()
+    # 查询主题信息
+    query = "update wiki_audio_user_member set member_expire ='"+time+"' where member_user_id='6191349'"
+    try:
+        cs1.execute(query)
+        conn.commit()
+    except:
+        conn.rollback()
+    # 关闭cursor对象
+    cs1.close()
+    # 关闭connection对象
+    conn.close()
