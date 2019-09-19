@@ -23,9 +23,7 @@ class GetTradeList(unittest.TestCase):
         """班费明细---未传token"""
         params={'access_token':"",'class_id':1000}
         response=requests.get(self.base_url,params)
-        result=response.json()
-        print(result)
-        self.assertEqual(result['error'], '获取账号信息失败')
+        print(response)
 
     def test_getTradeList_noClassId(self):
         """班费明细---未传classId"""
@@ -43,5 +41,4 @@ class GetTradeList(unittest.TestCase):
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
-        #self.assertEqual(result['error'],'您没有权限进行操作')
-        self.assertNotEqual(len(result['data']['list']), 0)
+        self.assertEqual(result['error'],'权限不足')
