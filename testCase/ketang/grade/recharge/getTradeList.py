@@ -25,7 +25,7 @@ class GetTradeList(unittest.TestCase):
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
-        self.assertNotEqual(len(result['data']['list']),0)
+        self.assertEqual(result['error'], '获取账号信息失败')
 
     def test_getTradeList_noClassId(self):
         """班费明细---未传classId"""
