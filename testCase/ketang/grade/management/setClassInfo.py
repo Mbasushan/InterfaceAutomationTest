@@ -121,7 +121,7 @@ class SetClassInfo(unittest.TestCase):
 
     def test_setClassInfo_admin(self):
         """设置班级信息---管理员修改班级昵称"""
-        access_token=Token.get_token_login('苏珊13','123456')
+        access_token=Token.get_token_login('冰辰羽','123456')
         params = {'access_token': access_token, 'class_id': '1000','name':'测试'}
         response = requests.post(self.base_url, params)
         result = response.json()

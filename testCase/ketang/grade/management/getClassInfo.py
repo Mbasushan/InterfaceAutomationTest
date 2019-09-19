@@ -43,4 +43,5 @@ class GetClassInfo(unittest.TestCase):
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
-        self.assertEqual(result['error'], '您没有权限进行操作')
+        #self.assertEqual(result['error'], '您没有权限进行操作')
+        self.assertNotEqual(result['data'], '')

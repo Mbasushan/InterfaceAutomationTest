@@ -30,7 +30,7 @@ class GetJoinApplyList(unittest.TestCase):
 
     def test_getJoinApplyList_admin(self):
         """获取入班申请列表---管理员获取"""
-        access_token = Token.get_token_login('苏珊13', '123456')
+        access_token = Token.get_token_login('冰辰羽', '123456')
         params = {'access_token': access_token, 'class_id': 1000}
         response = requests.post(self.base_url, params)
         result = response.json()

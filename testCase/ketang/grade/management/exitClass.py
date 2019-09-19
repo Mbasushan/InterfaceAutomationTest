@@ -29,7 +29,7 @@ class ExitClass(unittest.TestCase):
     def test_exitClass_noClass(self):
         """退出班级--未加入该班级"""
         access_token=Token.get_token_login('苏珊11','123456')
-        params={'access_token':access_token,'class_id':'1003'}
+        params={'access_token':access_token,'class_id':'1004'}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)

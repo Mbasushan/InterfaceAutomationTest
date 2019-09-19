@@ -20,7 +20,12 @@ class JoinClass(unittest.TestCase):
     def test_joinClass_joining(self):
         """申请加入班级--已申请"""
         access_token = Token.get_token_login('苏珊11', '123456')
-        params = {'access_token': access_token, 'class_id': '1000'}
+        params = {'access_token': access_token, 'class_id': '1003'}
+        flag = isJoin('20059','43')
+        if flag:
+            print("已加入班级")
+        else:
+            response1 = requests.post(self.base_url, params)
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -46,13 +51,13 @@ class JoinClass(unittest.TestCase):
         self.assertEqual(result['error'], '参数错误')
 
 #查找是否加入班级
-def isJoin():
+def isJoin(userId,classId):
     # 连接数据库
     conn = mySqlConnect.my_db()
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "SELECT member_state FROM ketang_class_member WHERE member_user_id='20059' AND member_class_id=30"
+    query = "SELECT member_state FROM ketang_class_member WHERE member_user_id='"+userId+"' AND member_class_id='"+classId+"'"
     cs1.execute(query)
     isjoin = cs1.fetchall()
     print(isjoin)
@@ -65,21 +70,3 @@ def isJoin():
             return False
     else:
         return False
-
-#删除已加入班级的数据
-def delete():
-    # 连接数据库
-    conn = mySqlConnect.my_db()
-    # 获取cursor对象
-    cs1 = conn.cursor()
-    # 查询主题信息
-    query = "delete FROM ketang_class_member WHERE member_user_id='20059' AND member_class_id=30"
-    try:
-        cs1.execute(query)
-        conn.commit()
-    except:
-        conn.rollback()
-    # 关闭cursor对象
-    cs1.close()
-    # 关闭connection对象
-    conn.close()

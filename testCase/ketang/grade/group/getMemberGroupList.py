@@ -54,7 +54,7 @@ class GetMemberGroupList(unittest.TestCase):
     def test_getMemberGroupList_errorUserId(self):
         """获取成员分组列表---用户不是该班级成员"""
         access_token=Token.getToken()
-        params = {'access_token': access_token,'class_id':1000,'user_id':20059}
+        params = {'access_token': access_token,'class_id':1000,'user_id':20271}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)

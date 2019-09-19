@@ -75,6 +75,15 @@ class SetMemberGroup(unittest.TestCase):
         """设置成员分组---未传成员groupIds,清掉该成员分组"""
         clear_group(self)
 
+    def test_setMemberGroup_errorGroupId(self):
+        """设置成员分组---该班级未有该分组"""
+        access_token = Token.getToken()
+        params={'access_token':access_token,'set_user_id':20061,'group_ids':'["1"]'}
+        response=requests.post(self.base_url,params)
+        result=response.json()
+        print(result)
+        self.assertEqual(result['error'],"参数错误")
+
 #清除成员分组
 def clear_group(self):
     access_token = Token.getToken()
