@@ -9,5 +9,5 @@ def now_time(strTime): #strTime  时间格式
     now_time = datetime.datetime.now()
     #转格式
     now_time=now_time.strftime(strTime)
-    print(now_time)
+    print("当前时间：",now_time)
     return now_time
