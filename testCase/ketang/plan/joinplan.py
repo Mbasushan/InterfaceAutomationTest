@@ -3,7 +3,6 @@
 import unittest
 import requests
 import testCase.common.getToken as Token
-import testCase.common.getTime as getTime
 import testCase.ketang.plan.base.creatPlanBase as creatPlanBase
 import testCase.ketang.plan.base.delPlanBase as delPlanBase
 import db_fixture.mysql_db as mySqlConnect

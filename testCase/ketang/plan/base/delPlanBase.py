@@ -15,6 +15,14 @@ def delete_plan(planId):
         conn.commit()
     except:
         conn.rollback()
+
+    # 查询主题信息
+    sql = "delete FROM ketang_plan_day WHERE pd_plan_id='" + planId + "';delete FROM ketang_plan_material WHERE pm_plan_id='" + planId + "'"
+    try:
+        cs1.execute(sql)
+        conn.commit()
+    except:
+        conn.rollback()
     # 关闭cursor对象
     cs1.close()
     # 关闭connection对象
