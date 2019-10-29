@@ -3,7 +3,8 @@
 import unittest
 import requests
 import testCase.common.getToken as getToken
-
+import testCase.common.virtualPayment as virtualPayment
+import db_fixture.mysql_db as mySqlConnect
 
 #开通会员
 class Recharge(unittest.TestCase):
@@ -24,7 +25,7 @@ class Recharge(unittest.TestCase):
         """开通会员-未传支付类型"""
         #paytype:weixin,alipay,mb
         access_toke=getToken.getToken()
-        params={"type":"ketang_vip_15month","access_token":access_toke}
+        params={"type":"ketang_vip_year","access_token":access_toke}
         response = requests.post(self.base_url,params=params)
         result = response.json()
         print(result)
@@ -34,7 +35,7 @@ class Recharge(unittest.TestCase):
     def test_getVipConfig_noAccessToke(self):
         """开通会员-未传用户令牌"""
         #paytype:weixin,alipay,mb
-        params={"type":"ketang_vip_15month","payType":'weixin',"access_token":''}
+        params={"type":"ketang_vip_year","paytype":'weixin',"access_token":''}
         response = requests.post(self.base_url,params=params)
         result = response.json()
         print(result)
@@ -45,16 +46,16 @@ class Recharge(unittest.TestCase):
         #paytype:weixin,alipay,mb
         print("发起订单")
         access_toke = getToken.getToken()
-        params={"type":"ketang_vip_15month","payType":'weixin',"access_token":access_toke}
+        params={"type":"ketang_vip_year","paytype":'weixin',"access_token":access_toke}
         response = requests.post(self.base_url,params=params)
         result = response.json()
         print(result)
         self.assertEqual(result['state'],'success')
-        # print("执行支付")
-        # trade=result['order']
-        # print(trade)
-        # re=requests.get('http://ke.test.mbalib.com/adminorder/test?trade=338644811566287031&fee=998')
-        # print(re)
+        trade=result['order_number']
+        fee=getFee(str(result['id']))
+        print(fee)
+        #虚拟支付接口
+        virtualPayment.test_virtualPaymentKetang(self,trade,fee)
 
 
     def test_getVipConfig_alipay(self):
@@ -62,32 +63,32 @@ class Recharge(unittest.TestCase):
         #paytype:weixin,alipay,mb
         print("发起订单")
         access_toke = getToken.getToken()
-        params={"type":"ketang_vip_15month","payType":'alipay',"access_token":access_toke}
+        params={"type":"ketang_vip_year","paytype":'alipay',"access_token":access_toke}
         response = requests.post(self.base_url,params=params)
         result = response.json()
         print(result)
         self.assertEqual(result['state'],'success')
-        #print("执行支付")
-        # trade=result['order']
-        # print(trade)
-        # re=requests.get('http://ke.test.mbalib.com/adminorder/test?trade=338644811566287031&fee=998')
-        # print(re)
+        trade = result['order_number']
+        fee = getFee(str(result['id']))
+        print(fee)
+        # 虚拟支付接口
+        virtualPayment.test_virtualPaymentKetang(self, trade, fee)
 
     def test_getVipConfig_mb(self):
-        """开通会员-支付宝"""
+        """开通会员-M币"""
         #paytype:weixin,alipay,mb
         print("发起订单")
         access_toke = getToken.getToken()
-        params={"type":"ketang_vip_15month","payType":'mb',"access_token":access_toke}
+        params={"type":"ketang_vip_year","paytype":'mb',"access_token":access_toke}
         response = requests.post(self.base_url,params=params)
         result = response.json()
         print(result)
-        self.assertEqual(result['state'],'success')
-        #print("执行支付")
-        # trade=result['order']
-        # print(trade)
-        # re=requests.get('http://ke.test.mbalib.com/adminorder/test?trade=338644811566287031&fee=998')
-        # print(re)
+        if 'state' in result:
+            self.assertEqual(result['state'], 'success')
+        else:
+            self.assertEqual(result['error'],'余额不足')
+
+
 
 def getType(self):
     response = requests.post('http://ke.test.mbalib.com/vip/config')
@@ -96,3 +97,15 @@ def getType(self):
     type=result['data']['key']
     print(type)
     return type
+
+#根据订单id获取订单金额
+def getFee(id):
+    # 连接数据库
+    conn = mySqlConnect.my_db()
+    # 获取cursor对象
+    cs1 = conn.cursor()
+    # 查询主题信息
+    query = "SELECT order_amount FROM ketang_order WHERE order_id='" + id + "'"
+    cs1.execute(query)
+    fee = cs1.fetchone()[0]
+    return fee

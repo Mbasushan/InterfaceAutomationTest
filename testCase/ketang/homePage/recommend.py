@@ -1,10 +1,9 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
-#热门推荐
 import unittest
 import requests
 
-
+#热门推荐
 class Recommend(unittest.TestCase):
 
     def setUp(self):
