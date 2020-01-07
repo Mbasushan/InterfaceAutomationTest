@@ -1,4 +1,4 @@
-#!D:\InterfaceAutomationTest\venv\Scripts\python.exe
+#!E:\½Å±¾\InterfaceAutomationTest\venv\Scripts\python.exe -x
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==39.1.0','console_scripts','easy_install'
 __requires__ = 'setuptools==39.1.0'
 import re
