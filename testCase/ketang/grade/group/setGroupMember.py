@@ -10,11 +10,11 @@ class SetGroupMember(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/setGroupMember"
+        self.access_token = Token.get_token_login('sxs14', '123456')
 
     def test_setGroupMember(self):
         """设置分组成员"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token, 'class_id': 1000, 'set_user_ids': '["20035","20061"]', 'group_id': 17}
+        params = {'access_token': self.access_token, 'class_id': 1003, 'set_user_ids': '["20271","20314"]', 'group_id': 69}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -24,7 +24,7 @@ class SetGroupMember(unittest.TestCase):
 
     def test_setGroupMember_noToken(self):
         """设置分组成员---未传token"""
-        params = {'access_token': "", 'class_id': 1000, 'set_user_ids': '["20035","20061"]', 'group_id': 17}
+        params = {'access_token': "", 'class_id': 1000, 'set_user_ids': '["20271","20314"]', 'group_id': 69}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -32,8 +32,7 @@ class SetGroupMember(unittest.TestCase):
 
     def test_setGroupMember_noClassId(self):
         """设置分组成员---未传classId"""
-        access_token=Token.getToken()
-        params = {'access_token': access_token, 'set_user_ids': '["20035","20061"]', 'group_id': 17}
+        params = {'access_token': self.access_token, 'set_user_ids': '["20271","20314"]', 'group_id': 69}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -41,8 +40,7 @@ class SetGroupMember(unittest.TestCase):
 
     def test_setGroupMember_noGroupId(self):
         """设置分组成员---未传groupId"""
-        access_token=Token.getToken()
-        params = {'access_token': access_token, 'set_user_ids': '["20035","20061"]', 'class_id': 1000}
+        params = {'access_token': self.access_token, 'set_user_ids': '["20271","20314"]', 'class_id': 1000}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -54,8 +52,7 @@ class SetGroupMember(unittest.TestCase):
 
     def test_setGroupMember_errorGroupId(self):
         """设置分组成员---该班级未有该分组"""
-        access_token=Token.getToken()
-        params = {'access_token': access_token, 'set_user_ids': '["20035","20061"]', 'group_id': 1}
+        params = {'access_token': self.access_token, 'set_user_ids': '["20271","20314"]', 'group_id': 1}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -64,8 +61,7 @@ class SetGroupMember(unittest.TestCase):
 
 #清除分组成员
 def clear_member(self):
-    access_token = Token.getToken()
-    params = {'access_token': access_token, 'class_id': 1000, 'group_id': 17}
+    params = {'access_token': self.access_token, 'class_id': 1003, 'group_id': 69}
     response = requests.post(self.base_url, params)
     result = response.json()
     print(result)

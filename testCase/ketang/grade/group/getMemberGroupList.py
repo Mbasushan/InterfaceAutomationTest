@@ -10,11 +10,11 @@ class GetMemberGroupList(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/getMemberGroupList"
+        self.access_token=Token.get_token_login('sxs14','123456')
 
     def test_getMemberGroupList(self):
         """获取成员分组列表"""
-        access_token=Token.getToken()
-        params={'access_token':access_token,'class_id':1000,'user_id':20035}
+        params={'access_token':self.access_token,'class_id':1003,'user_id':20271}
         response=requests.get(self.base_url,params)
         result=response.json()
         self.assertNotEqual(len(result['data']),0)
@@ -27,7 +27,7 @@ class GetMemberGroupList(unittest.TestCase):
 
     def test_getMemberGroupList_noToken(self):
         """获取成员分组列表---未传Token"""
-        params={'access_token':"",'class_id':1000,'user_id':20035}
+        params={'access_token':"",'class_id':1003,'user_id':20271}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
@@ -35,8 +35,7 @@ class GetMemberGroupList(unittest.TestCase):
 
     def test_getMemberGroupList_noClassId(self):
         """获取成员分组列表---未传class_id"""
-        access_token=Token.getToken()
-        params = {'access_token': "access_token", 'user_id': 20035}
+        params = {'access_token': self.access_token, 'user_id': 20271}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
@@ -44,8 +43,7 @@ class GetMemberGroupList(unittest.TestCase):
 
     def test_getMemberGroupList_noUserId(self):
         """获取成员分组列表---未传user_id"""
-        access_token=Token.getToken()
-        params = {'access_token': "access_token",'class_id':1000}
+        params = {'access_token': self.access_token,'class_id':1003}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
@@ -53,8 +51,7 @@ class GetMemberGroupList(unittest.TestCase):
 
     def test_getMemberGroupList_errorUserId(self):
         """获取成员分组列表---用户不是该班级成员"""
-        access_token=Token.getToken()
-        params = {'access_token': access_token,'class_id':1000,'user_id':20271}
+        params = {'access_token': self.access_token,'class_id':1003,'user_id':20386}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)

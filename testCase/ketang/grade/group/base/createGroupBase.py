@@ -4,10 +4,9 @@ import requests
 import testCase.common.getToken as Token
 
 #创建分组
-def create_group(self):
+def create_group(self,access_token):
     url = 'http://ke.test.mbalib.com/class/createGroup'
-    access_token = Token.getToken()
-    params = {'access_token': access_token,'class_id':1000, 'name': '测试'}
+    params = {'access_token': access_token,'class_id':1003, 'name': '测试'}
     response=requests.post(url,params)
     result=response.json()
     print(result)

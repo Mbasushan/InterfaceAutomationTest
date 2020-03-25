@@ -12,14 +12,14 @@ class GetGroupMemberList(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/getGroupMemberList"
+        self.access_token=Token.get_token_login('sxs14','123456')
 
     def test_getGroupMemberList(self):
         """获取分组成员列表"""
-        access_token=Token.getToken()
-        list=getGroupListBase.getGroupList(self)
+        list=getGroupListBase.getGroupList(self,self.access_token)
         for i in range(len(list)):
             groupId=list[i]['group_id']
-            params={'access_token':access_token,'group_id':groupId,'class_id':1000}
+            params={'access_token':self.access_token,'group_id':groupId,'class_id':1003}
             response=requests.get(self.base_url,params)
             result=response.json()
             print('分组成员数量：',len(result['data']['member_list']))
@@ -28,10 +28,10 @@ class GetGroupMemberList(unittest.TestCase):
 
     def test_getGroupMemberList_noToken(self):
         """获取分组成员列表---未传token"""
-        list = getGroupListBase.getGroupList(self)
+        list = getGroupListBase.getGroupList(self,self.access_token)
         for i in range(len(list)):
             groupId = list[i]['group_id']
-            params = {'access_token': "", 'group_id': groupId, 'class_id': 1000}
+            params = {'access_token': "", 'group_id': groupId, 'class_id': 1003}
             response = requests.get(self.base_url, params)
             result = response.json()
             print(result)
@@ -39,11 +39,10 @@ class GetGroupMemberList(unittest.TestCase):
 
     def test_getGroupMemberList_noClassId(self):
         """获取分组成员列表---未传classId"""
-        access_token=Token.getToken()
-        list = getGroupListBase.getGroupList(self)
+        list = getGroupListBase.getGroupList(self,self.access_token)
         for i in range(len(list)):
             groupId = list[i]['group_id']
-            params = {'access_token': access_token, 'group_id': groupId}
+            params = {'access_token': self.access_token, 'group_id': groupId}
             response = requests.get(self.base_url, params)
             result = response.json()
             print(result)
@@ -51,8 +50,7 @@ class GetGroupMemberList(unittest.TestCase):
 
     def test_getGroupMemberList_noGroupId(self):
         """获取分组成员列表---未传groupId"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token, 'class_id': 1000}
+        params = {'access_token': self.access_token, 'class_id': 1003}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)

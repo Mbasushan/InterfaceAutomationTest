@@ -11,19 +11,20 @@ class CreateGroup(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/createGroup"
+        self.access_token = Token.get_token_login('sxs14','123456')
 
     def test_createGroup(self):
         """创建班级分组"""
         #创建
-        groupId=createGroupBase.create_group(self)
+        groupId=createGroupBase.create_group(self,self.access_token)
         print("创建班级分组成功")
         #删除
-        deleteGroupBase.delete_group(self,groupId)
+        deleteGroupBase.delete_group(self,groupId,self.access_token)
         print("删除班级分组成功")
 
     def test_createGroup_noToken(self):
         """创建班级分组---未传token"""
-        params = {'access_token': "", 'class_id': 1000, 'name': '测试'}
+        params = {'access_token': "", 'class_id': 1003, 'name': '测试'}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -31,8 +32,7 @@ class CreateGroup(unittest.TestCase):
 
     def test_createGroup_noClassId(self):
         """创建班级分组---未传classId"""
-        access_token=Token.getToken()
-        params = {'access_token': access_token,  'name': '测试'}
+        params = {'access_token': self.access_token,  'name': '测试'}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -40,8 +40,7 @@ class CreateGroup(unittest.TestCase):
 
     def test_createGroup_noName(self):
         """创建班级分组---未传name"""
-        access_token=Token.getToken()
-        params = {'access_token': access_token, 'class_id': 1000}
+        params = {'access_token': self.access_token, 'class_id': 1003}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)

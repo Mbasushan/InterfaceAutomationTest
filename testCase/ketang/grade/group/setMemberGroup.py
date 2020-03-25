@@ -11,17 +11,17 @@ class SetMemberGroup(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/setMemberGroup"
+        self.access_token = Token.get_token_login('sxs14', '123456')
 
     def test_setMemberGroup(self):
         """设置成员分组"""
-        access_token=Token.getToken()
-        group_ids=getGroupListBase.getGroupList(self)
+        group_ids=getGroupListBase.getGroupList(self,self.access_token)
         list=[]
         for i in range(len(group_ids)):
              list.append(group_ids[i]['group_id'])
         list=json.dumps(list)
         print(list)
-        params={'access_token':access_token,'class_id':1000,'set_user_id':20061,'group_ids':list}
+        params={'access_token':self.access_token,'class_id':1003,'set_user_id':20271,'group_ids':list}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -32,12 +32,12 @@ class SetMemberGroup(unittest.TestCase):
 
     def test_setMemberGroup_noToken(self):
         """设置成员分组---未传token"""
-        group_ids=getGroupListBase.getGroupList(self)
+        group_ids=getGroupListBase.getGroupList(self,self.access_token)
         list=[]
         for i in range(len(group_ids)):
              list.append(group_ids[i]['group_id'])
         list=json.dumps(list)
-        params={'access_token':"",'class_id':1000,'set_user_id':20061,'group_ids':list}
+        params={'access_token':"",'class_id':1003,'set_user_id':20271,'group_ids':list}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -45,13 +45,12 @@ class SetMemberGroup(unittest.TestCase):
 
     def test_setMemberGroup_noClassId(self):
         """设置成员分组---未传classId"""
-        access_token = Token.getToken()
-        group_ids=getGroupListBase.getGroupList(self)
+        group_ids=getGroupListBase.getGroupList(self,self.access_token)
         list=[]
         for i in range(len(group_ids)):
              list.append(group_ids[i]['group_id'])
         list=json.dumps(list)
-        params={'access_token':access_token,'set_user_id':20061,'group_ids':list}
+        params={'access_token':self.access_token,'set_user_id':20271,'group_ids':list}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -59,13 +58,12 @@ class SetMemberGroup(unittest.TestCase):
 
     def test_setMemberGroup_noUserId(self):
         """设置成员分组---未传成员id"""
-        access_token = Token.getToken()
-        group_ids=getGroupListBase.getGroupList(self)
+        group_ids=getGroupListBase.getGroupList(self,self.access_token)
         list=[]
         for i in range(len(group_ids)):
              list.append(group_ids[i]['group_id'])
         list=json.dumps(list)
-        params={'access_token':access_token,'class_id':1000,'group_ids':list}
+        params={'access_token':self.access_token,'class_id':1003,'group_ids':list}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -77,8 +75,7 @@ class SetMemberGroup(unittest.TestCase):
 
     def test_setMemberGroup_errorGroupId(self):
         """设置成员分组---该班级未有该分组"""
-        access_token = Token.getToken()
-        params={'access_token':access_token,'set_user_id':20061,'group_ids':'["1"]'}
+        params={'access_token':self.access_token,'set_user_id':20271,'group_ids':'["1"]'}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -86,8 +83,7 @@ class SetMemberGroup(unittest.TestCase):
 
 #清除成员分组
 def clear_group(self):
-    access_token = Token.getToken()
-    params = {'access_token': access_token, 'class_id': 1000, 'set_user_id': 20061}
+    params = {'access_token': self.access_token, 'class_id': 1003, 'set_user_id': 20271}
     response = requests.post(self.base_url, params)
     result = response.json()
     print(result)

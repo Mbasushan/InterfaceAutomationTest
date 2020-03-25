@@ -4,10 +4,9 @@ import requests
 import testCase.common.getToken as Token
 
 #删除分组
-def delete_group(self,id):
+def delete_group(self,id,access_token):
     url = 'http://ke.test.mbalib.com/class/delGroup'
-    access_token = Token.getToken()
-    params = {'access_token': access_token,'class_id':1000, 'group_id': id}
+    params = {'access_token': access_token,'class_id':1003, 'group_id': id}
     response=requests.post(url,params)
     result=response.json()
     print(result)
