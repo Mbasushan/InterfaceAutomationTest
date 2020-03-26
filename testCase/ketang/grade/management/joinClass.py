@@ -11,6 +11,7 @@ class JoinClass(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com//class/applyJoinClass"
+        self.access_token = Token.get_token_login('sxs14', '123456')
 
     def test_joinClass(self):
         """申请加入班级"""
@@ -19,8 +20,8 @@ class JoinClass(unittest.TestCase):
 
     def test_joinClass_joining(self):
         """申请加入班级--已申请"""
-        access_token = Token.get_token_login('苏珊11', '123456')
-        params = {'access_token': access_token, 'class_id': '1003'}
+        access_token = Token.get_token_login('sxs16', '123456')
+        params = {'access_token': access_token, 'class_id': '1079'}
         flag = isJoin('20059','43')
         if flag:
             print("已加入班级")
@@ -34,8 +35,7 @@ class JoinClass(unittest.TestCase):
 
     def test_joinClass_joined(self):
         """申请加入班级--已是班级成员"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token, 'class_id': '1000'}
+        params = {'access_token': self.access_token, 'class_id': '1079'}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)

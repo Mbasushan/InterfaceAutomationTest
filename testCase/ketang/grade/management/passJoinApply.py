@@ -11,13 +11,13 @@ class PassJoinApply(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/passJoinApply"
+        self.access_token = Token.get_token_login('sxs14', '123456')
 
     def test_passJoinApply(self):
         """申请入班通过"""
-        #判断用户20059是否申请入班,有则通过，无则创建用户申请
+        #判断用户20392是否申请入班,有则通过，无则创建用户申请
         joinClass.join_class(self)
-        access_token = Token.getToken()
-        params = {'access_token': access_token, 'class_id': 1003,'user_id':20059}
+        params = {'access_token': self.access_token, 'class_id': 1079,'user_id':20392}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -25,7 +25,7 @@ class PassJoinApply(unittest.TestCase):
 
     def test_passJoinApply_noToken(self):
         """申请入班通过---未传token"""
-        params = {'access_token': "", 'class_id': 1003, 'user_id': 20059}
+        params = {'access_token': "", 'class_id': 1079, 'user_id': 20392}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -33,8 +33,7 @@ class PassJoinApply(unittest.TestCase):
 
     def test_passJoinApply_noClassId(self):
         """申请入班通过---未传class_id"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token,'user_id': 20059}
+        params = {'access_token': self.access_token,'user_id': 20392}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -42,8 +41,7 @@ class PassJoinApply(unittest.TestCase):
 
     def test_passJoinApply_noUserId(self):
         """申请入班通过---未传user_id"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token,'class_id':1003}
+        params = {'access_token': self.access_token,'class_id':1079}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)

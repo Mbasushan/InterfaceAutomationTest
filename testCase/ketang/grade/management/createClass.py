@@ -10,28 +10,32 @@ class CreateClass(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com//class/createClass"
+        self.access_token=Token.get_token_login('sxs14','123456')
 
     def test_createClass(self):
         """申请创建班级"""
-        access_token=Token.getToken()
-        params={"access_token":access_token,"name":'接口测试创建班级','contact':"测试",'mobile':'13106445986','organization':'测试创建班级-组织名称'}
+        params={"access_token":self.access_token,"name":'接口测试创建班级','contact':"测试",'mobile':'13106445986','organization':'测试创建班级-组织名称'}
         response=requests.post(self.base_url,params)
         result=response.json()
         print("申请创建班级成功",result)
-        class_id=select()
+        key=result['class_key']
+        class_id=select(key)
         self.assertNotEqual(class_id,0)
-
-    def test_createClass_repeat(self):
-        """申请创建班级---已存在申请中的班级"""
-        access_token = Token.getToken()
-        params = {"access_token": access_token, "name": '接口测试创建班级', 'contact': "测试", 'mobile': '13106445986','organization': '测试创建班级-组织名称'}
-        response = requests.post(self.base_url, params)
-        result = response.json()
-        print(result)
-        self.assertEqual(result['error'],'您已经有一个在申请中的班级')
-        #删除该申请中的班级
-        class_id = select()
+        #删除创建班级
         delete(str(class_id))
+
+    # def test_createClass_repeat(self):
+    #现在需求改为创建，班级直接通过，不用审核
+    #     """申请创建班级---已存在申请中的班级"""
+    #     access_token = Token.getToken()
+    #     params = {"access_token": access_token, "name": '接口测试创建班级', 'contact': "测试", 'mobile': '13106445986','organization': '测试创建班级-组织名称'}
+    #     response = requests.post(self.base_url, params)
+    #     result = response.json()
+    #     print(result)
+    #     self.assertEqual(result['error'],'您已经有一个在申请中的班级')
+    #     #删除该申请中的班级
+    #     class_id = select()
+    #     delete(str(class_id))
 
     def test_createClass_noToken(self):
         """申请创建班级---未传token"""
@@ -44,8 +48,7 @@ class CreateClass(unittest.TestCase):
 
     def test_createClass_noName(self):
         """申请创建班级---未传name"""
-        access_token=Token.getToken()
-        params = {"access_token": access_token, 'contact': "测试", 'mobile': '13106445986',
+        params = {"access_token": self.access_token, 'contact': "测试", 'mobile': '13106445986',
                   'organization': '测试创建班级-组织名称'}
         response = requests.post(self.base_url, params)
         result = response.json()
@@ -54,8 +57,7 @@ class CreateClass(unittest.TestCase):
 
     def test_createClass_noContact(self):
         """申请创建班级---未传contact"""
-        access_token=Token.getToken()
-        params = {"access_token": access_token, 'name': "测试", 'mobile': '13106445986',
+        params = {"access_token": self.access_token, 'name': "测试", 'mobile': '13106445986',
                   'organization': '测试创建班级-组织名称'}
         response = requests.post(self.base_url, params)
         result = response.json()
@@ -64,8 +66,7 @@ class CreateClass(unittest.TestCase):
 
     def test_createClass_noMobile(self):
         """申请创建班级---未传mobile"""
-        access_token=Token.getToken()
-        params = {"access_token": access_token, 'name': "测试", 'contact': '13106445986',
+        params = {"access_token": self.access_token, 'name': "测试", 'contact': '13106445986',
                   'organization': '测试创建班级-组织名称'}
         response = requests.post(self.base_url, params)
         result = response.json()
@@ -75,8 +76,7 @@ class CreateClass(unittest.TestCase):
 
     def test_createClass_noOrganization(self):
         """申请创建班级---未传organization"""
-        access_token=Token.getToken()
-        params = {"access_token": access_token, 'name': "测试", 'mobile': '13106445986',
+        params = {"access_token": self.access_token, 'name': "测试", 'mobile': '13106445986',
                   'contact': '测试创建班级'}
         response = requests.post(self.base_url, params)
         result = response.json()
@@ -85,13 +85,13 @@ class CreateClass(unittest.TestCase):
 
 
 #查询该申请的班级是否成功
-def select():
+def select(key):
     # 连接数据库
     conn = mySqlConnect.my_db()
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "SELECT class_id FROM ketang_class c JOIN ketang_class_member m ON c.`class_id`=m.`member_class_id` WHERE c.class_state = 'audit' AND  m.member_user_id = '20035' "
+    query = "SELECT class_id FROM ketang_class where  class_key="+key
     cs1.execute(query)
     isjoin = cs1.fetchall()
     return isjoin[0][0]

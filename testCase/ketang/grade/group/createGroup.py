@@ -24,7 +24,7 @@ class CreateGroup(unittest.TestCase):
 
     def test_createGroup_noToken(self):
         """创建班级分组---未传token"""
-        params = {'access_token': "", 'class_id': 1003, 'name': '测试'}
+        params = {'access_token': "", 'class_id': 1079, 'name': '测试'}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -40,7 +40,7 @@ class CreateGroup(unittest.TestCase):
 
     def test_createGroup_noName(self):
         """创建班级分组---未传name"""
-        params = {'access_token': self.access_token, 'class_id': 1003}
+        params = {'access_token': self.access_token, 'class_id': 1079}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)

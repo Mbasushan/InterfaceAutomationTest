@@ -21,7 +21,7 @@ class SetMemberGroup(unittest.TestCase):
              list.append(group_ids[i]['group_id'])
         list=json.dumps(list)
         print(list)
-        params={'access_token':self.access_token,'class_id':1003,'set_user_id':20271,'group_ids':list}
+        params={'access_token':self.access_token,'class_id':1079,'set_user_id':20271,'group_ids':list}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -37,7 +37,7 @@ class SetMemberGroup(unittest.TestCase):
         for i in range(len(group_ids)):
              list.append(group_ids[i]['group_id'])
         list=json.dumps(list)
-        params={'access_token':"",'class_id':1003,'set_user_id':20271,'group_ids':list}
+        params={'access_token':"",'class_id':1079,'set_user_id':20271,'group_ids':list}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -63,7 +63,7 @@ class SetMemberGroup(unittest.TestCase):
         for i in range(len(group_ids)):
              list.append(group_ids[i]['group_id'])
         list=json.dumps(list)
-        params={'access_token':self.access_token,'class_id':1003,'group_ids':list}
+        params={'access_token':self.access_token,'class_id':1079,'group_ids':list}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -83,7 +83,7 @@ class SetMemberGroup(unittest.TestCase):
 
 #清除成员分组
 def clear_group(self):
-    params = {'access_token': self.access_token, 'class_id': 1003, 'set_user_id': 20271}
+    params = {'access_token': self.access_token, 'class_id': 1079, 'set_user_id': 20271}
     response = requests.post(self.base_url, params)
     result = response.json()
     print(result)

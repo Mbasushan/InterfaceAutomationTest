@@ -129,6 +129,8 @@ class GroupBooking(unittest.TestCase):
             # 删除报名
             delSign.delete('20271', '660')
             delSign.delete('20064', '660')
+            #删除拼团成员
+
         deleteOrder.delete(order_number1)
 
     def test_column_join_groupbooking(self):

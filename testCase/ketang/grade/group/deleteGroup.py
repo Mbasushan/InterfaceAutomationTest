@@ -13,7 +13,7 @@ class DeleteGroup(unittest.TestCase):
 
     def test_deleteGroup_noToken(self):
         """删除班级分组-未传token"""
-        params = {'access_token': "", 'class_id': 1003, 'group_id': id}
+        params = {'access_token': "", 'class_id': 1079, 'group_id': id}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -29,7 +29,7 @@ class DeleteGroup(unittest.TestCase):
 
     def test_deleteGroup_noGroupId(self):
         """删除班级分组-未传groupId"""
-        params = {'access_token': self.access_token,  'class_id': 1003}
+        params = {'access_token': self.access_token,  'class_id': 1079}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)

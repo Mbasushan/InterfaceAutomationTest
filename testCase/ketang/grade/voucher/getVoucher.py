@@ -48,11 +48,11 @@ class GetVoucher(unittest.TestCase):
         if keys == []:
             print("班级优惠券已都领取")
         else:
-            params = {'access_token': access_token, 'key': keys[0]}
-            response = requests.get(self.base_url, params)
-            result = response.json()
-            print(result)
-            self.assertEqual(result['error'], '您已领取优惠券')
+            for i in range(len(keys)):
+                params = {'access_token': access_token, 'key': keys[i]}
+                response = requests.get(self.base_url, params)
+                result = response.json()
+                print(result)
 
 
     def test_getVoucher_noToken(self):

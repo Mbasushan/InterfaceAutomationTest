@@ -14,7 +14,7 @@ class GetMemberGroupList(unittest.TestCase):
 
     def test_getMemberGroupList(self):
         """获取成员分组列表"""
-        params={'access_token':self.access_token,'class_id':1003,'user_id':20271}
+        params={'access_token':self.access_token,'class_id':1079,'user_id':20271}
         response=requests.get(self.base_url,params)
         result=response.json()
         self.assertNotEqual(len(result['data']),0)
@@ -27,7 +27,7 @@ class GetMemberGroupList(unittest.TestCase):
 
     def test_getMemberGroupList_noToken(self):
         """获取成员分组列表---未传Token"""
-        params={'access_token':"",'class_id':1003,'user_id':20271}
+        params={'access_token':"",'class_id':1079,'user_id':20271}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
@@ -43,7 +43,7 @@ class GetMemberGroupList(unittest.TestCase):
 
     def test_getMemberGroupList_noUserId(self):
         """获取成员分组列表---未传user_id"""
-        params = {'access_token': self.access_token,'class_id':1003}
+        params = {'access_token': self.access_token,'class_id':1079}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
@@ -51,7 +51,7 @@ class GetMemberGroupList(unittest.TestCase):
 
     def test_getMemberGroupList_errorUserId(self):
         """获取成员分组列表---用户不是该班级成员"""
-        params = {'access_token': self.access_token,'class_id':1003,'user_id':20386}
+        params = {'access_token': self.access_token,'class_id':1079,'user_id':20386}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)

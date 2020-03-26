@@ -19,7 +19,7 @@ class GetGroupMemberList(unittest.TestCase):
         list=getGroupListBase.getGroupList(self,self.access_token)
         for i in range(len(list)):
             groupId=list[i]['group_id']
-            params={'access_token':self.access_token,'group_id':groupId,'class_id':1003}
+            params={'access_token':self.access_token,'group_id':groupId,'class_id':1079}
             response=requests.get(self.base_url,params)
             result=response.json()
             print('分组成员数量：',len(result['data']['member_list']))
@@ -31,7 +31,7 @@ class GetGroupMemberList(unittest.TestCase):
         list = getGroupListBase.getGroupList(self,self.access_token)
         for i in range(len(list)):
             groupId = list[i]['group_id']
-            params = {'access_token': "", 'group_id': groupId, 'class_id': 1003}
+            params = {'access_token': "", 'group_id': groupId, 'class_id': 1079}
             response = requests.get(self.base_url, params)
             result = response.json()
             print(result)
@@ -50,7 +50,7 @@ class GetGroupMemberList(unittest.TestCase):
 
     def test_getGroupMemberList_noGroupId(self):
         """获取分组成员列表---未传groupId"""
-        params = {'access_token': self.access_token, 'class_id': 1003}
+        params = {'access_token': self.access_token, 'class_id': 1079}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)

@@ -6,8 +6,8 @@ import db_fixture.mysql_db as mySqlConnect
 
 def join_class(self):
     url='http://ke.test.mbalib.com//class/applyJoinClass'
-    access_token = Token.get_token_login('苏珊11', '123456')
-    params = {'access_token': access_token, 'class_id': '1003'}
+    access_token = Token.get_token_login('sxs16', '123456')
+    params = {'access_token': access_token, 'class_id': '1079'}
     flag = isJoin()
     if flag:
         print("已加入班级")
@@ -25,7 +25,7 @@ def isJoin():
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "SELECT member_state FROM ketang_class_member WHERE member_user_id='20059' AND member_class_id=43"
+    query = "SELECT member_state FROM ketang_class_member WHERE member_user_id='20392' AND member_class_id=140"
     cs1.execute(query)
     isjoin = cs1.fetchall()
     print(isjoin)
@@ -46,7 +46,7 @@ def delete():
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "delete FROM ketang_class_member WHERE member_user_id='20059' AND member_class_id=43"
+    query = "delete FROM ketang_class_member WHERE member_user_id='20392' AND member_class_id=140"
     try:
         cs1.execute(query)
         conn.commit()

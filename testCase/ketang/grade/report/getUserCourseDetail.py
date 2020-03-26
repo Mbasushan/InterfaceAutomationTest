@@ -17,7 +17,7 @@ class GetUserCourseDetail(unittest.TestCase):
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
-        self.assertEqual(len(result['data']),0)
+        self.assertNotEqual(len(result['data']),0)
 
     def test_coloumn_detail(self):
         """获取成员专栏详情 (课程学习明细)"""
@@ -26,7 +26,7 @@ class GetUserCourseDetail(unittest.TestCase):
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
-        self.assertEqual(len(result['data']), 0)
+        self.assertNotEqual(len(result['data']), 0)
 
     def test_detail_noToken(self):
         """获取成员课程详情 (课程学习明细)---未登录"""

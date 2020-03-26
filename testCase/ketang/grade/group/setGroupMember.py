@@ -14,7 +14,7 @@ class SetGroupMember(unittest.TestCase):
 
     def test_setGroupMember(self):
         """设置分组成员"""
-        params = {'access_token': self.access_token, 'class_id': 1003, 'set_user_ids': '["20271","20314"]', 'group_id': 69}
+        params = {'access_token': self.access_token, 'class_id': 1079, 'set_user_ids': '["20271","20314"]', 'group_id': 78}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -24,7 +24,7 @@ class SetGroupMember(unittest.TestCase):
 
     def test_setGroupMember_noToken(self):
         """设置分组成员---未传token"""
-        params = {'access_token': "", 'class_id': 1000, 'set_user_ids': '["20271","20314"]', 'group_id': 69}
+        params = {'access_token': "", 'class_id': 1079, 'set_user_ids': '["20271","20314"]', 'group_id': 78}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -32,7 +32,7 @@ class SetGroupMember(unittest.TestCase):
 
     def test_setGroupMember_noClassId(self):
         """设置分组成员---未传classId"""
-        params = {'access_token': self.access_token, 'set_user_ids': '["20271","20314"]', 'group_id': 69}
+        params = {'access_token': self.access_token, 'set_user_ids': '["20271","20314"]', 'group_id': 78}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -40,7 +40,7 @@ class SetGroupMember(unittest.TestCase):
 
     def test_setGroupMember_noGroupId(self):
         """设置分组成员---未传groupId"""
-        params = {'access_token': self.access_token, 'set_user_ids': '["20271","20314"]', 'class_id': 1000}
+        params = {'access_token': self.access_token, 'set_user_ids': '["20271","20314"]', 'class_id': 1079}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -61,7 +61,7 @@ class SetGroupMember(unittest.TestCase):
 
 #清除分组成员
 def clear_member(self):
-    params = {'access_token': self.access_token, 'class_id': 1003, 'group_id': 69}
+    params = {'access_token': self.access_token, 'class_id': 1079, 'group_id': 78}
     response = requests.post(self.base_url, params)
     result = response.json()
     print(result)

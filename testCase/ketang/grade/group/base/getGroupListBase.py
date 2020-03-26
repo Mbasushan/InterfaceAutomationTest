@@ -7,7 +7,7 @@ import db_fixture.mysql_db as mySqlConnect
 # 获取分组列表
 def getGroupList(self,access_token):
     url='http://ke.test.mbalib.com/class/getGroupList'
-    params = {'access_token': access_token, 'class_id': 1003}
+    params = {'access_token': access_token, 'class_id': 1079}
     response = requests.get(url, params)
     result = response.json()
     print(result)
@@ -23,7 +23,7 @@ def select():
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "SELECT count(*) FROM ketang_class_group WHERE group_class_id=43"
+    query = "SELECT count(*) FROM ketang_class_group WHERE group_class_id=140"
     cs1.execute(query)
     result = cs1.fetchall()[0][0]
     return result

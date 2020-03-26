@@ -12,14 +12,14 @@ class ExitClass(unittest.TestCase):
 
     def test_exitClass(self):
         """退出班级"""
-        access_token=Token.get_token_login('苏珊11','123456')
-        params={'access_token':access_token,'class_id':'1000'}
+        access_token=Token.get_token_login('sxs16','123456')
+        params={'access_token':access_token,'class_id':'1079'}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
         self.assertEqual(len(result['data']),0)
         #申请加入班级
-        params = {'access_token': access_token, 'class_id': '1000'}
+        params = {'access_token': access_token, 'class_id': '1079'}
         responses = requests.post('http://ke.test.mbalib.com//class/applyJoinClass', params)
         results = responses.json()
         print(results)
@@ -28,8 +28,8 @@ class ExitClass(unittest.TestCase):
 
     def test_exitClass_noClass(self):
         """退出班级--未加入该班级"""
-        access_token=Token.get_token_login('苏珊11','123456')
-        params={'access_token':access_token,'class_id':'1004'}
+        access_token=Token.get_token_login('sxs16','123456')
+        params={'access_token':access_token,'class_id':'1000'}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -46,7 +46,7 @@ class ExitClass(unittest.TestCase):
 
     def test_exitClass_noClassId(self):
         """退出班级--未传classId"""
-        access_token=Token.get_token_login('苏珊11','123456')
+        access_token=Token.get_token_login('sxs14','123456')
         params={'access_token':access_token}
         response=requests.post(self.base_url,params)
         print(response)

@@ -28,7 +28,7 @@ def getVoucherKey_nouse(self):
     keys=[]
     for i in range(len(result['data']['list'])):
         data=result['data']['list']
-        if data[i]['voucher_state']=='nouse':
+        if data[i]['voucher_state']=='nouse' and data[i]['voucher_state']!='expired':
             keys.append(data[i]['voucher_key'])
     print(keys)
     return keys

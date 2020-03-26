@@ -11,11 +11,11 @@ class GetClassMemberList(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/getClassMemberList"
+        self.access_token = Token.get_token_login('sxs14', '123456')
 
     def test_getClassMemberList(self):
         """获取班级成员列表"""
-        access_token=Token.getToken()
-        params={'access_token':access_token,'class_id':1000,"start":0,"num":10}
+        params={'access_token':self.access_token,'class_id':1079,"start":0,"num":10}
         response=requests.get(self.base_url,params)
         result=response.json()
         size=len(result['data']['member_list'])
@@ -26,7 +26,7 @@ class GetClassMemberList(unittest.TestCase):
 
     def test_getClassMemberList_noToken(self):
         """获取班级成员列表---未传token"""
-        params={'access_token':"",'class_id':1000}
+        params={'access_token':"",'class_id':1079}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
@@ -34,8 +34,7 @@ class GetClassMemberList(unittest.TestCase):
 
     def test_getClassMemberList_noClassId(self):
         """获取班级成员列表---未传班级id"""
-        access_token = Token.getToken()
-        params={'access_token':access_token}
+        params={'access_token':self.access_token}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
@@ -44,8 +43,7 @@ class GetClassMemberList(unittest.TestCase):
 
     def test_keyword(self):
         """获取班级成员列表---搜索关键词"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token,'class_id':1000,'keyword':'珊丫头'}
+        params = {'access_token': self.access_token,'class_id':1079,'keyword':'珊丫头'}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
@@ -74,7 +72,7 @@ def count():
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "SELECT COUNT(*) FROM ketang_class_member WHERE member_class_id='30' AND member_state='pass'"
+    query = "SELECT COUNT(*) FROM ketang_class_member WHERE member_class_id='140' AND member_state='pass'"
     cs1.execute(query)
     length = cs1.fetchall()[0][0]
     return length

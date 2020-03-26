@@ -9,26 +9,25 @@ class GetTradeList(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/ClassTrade/getTradeList"
+        self.access_token=Token.get_token_login('sxs14','123456')
 
     def test_getTradeList(self):
         """班费明细"""
-        access_token=Token.getToken()
-        params={'access_token':access_token,'class_id':1000}
+        params={'access_token':self.access_token,'class_id':1079}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
-        self.assertNotEqual(len(result['data']['list']),0)
+        self.assertNotEqual(len(result['data']),0)
 
     def test_getTradeList_noToken(self):
         """班费明细---未传token"""
-        params={'access_token':"",'class_id':1000}
+        params={'access_token':"",'class_id':1079}
         response=requests.get(self.base_url,params)
         print(response)
 
     def test_getTradeList_noClassId(self):
         """班费明细---未传classId"""
-        access_token=Token.getToken()
-        params={'access_token':access_token}
+        params={'access_token':self.access_token}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
@@ -36,8 +35,8 @@ class GetTradeList(unittest.TestCase):
 
     def test_getTradeList_noJoinClass(self):
         """班费明细---不是该班级成员"""
-        access_token=Token.get_token_login('sxs14','123456')
-        params={'access_token':access_token,'class_id':1000}
+        access_token=Token.get_token_login('sxs1','123456')
+        params={'access_token':access_token,'class_id':1079}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)

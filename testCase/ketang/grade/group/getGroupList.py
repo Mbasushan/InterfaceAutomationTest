@@ -19,7 +19,7 @@ class GetGroupList(unittest.TestCase):
 
     def test_getGroupList_noToken(self):
         """获取分组列表---未传Token"""
-        params = {'access_token': "", 'class_id': 1003}
+        params = {'access_token': "", 'class_id': 1079}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)

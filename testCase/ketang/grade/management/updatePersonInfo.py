@@ -11,12 +11,12 @@ class UpdatePersonInfo(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/class/updatePersonInfo"
+        self.access_token=Token.get_token_login('sxs14','123456')
 
     def test_updatePersonInfo(self):
         """修改个人信息---修改姓名"""
-        access_token = Token.getToken()
-        name = 'Sxs1'
-        params = {'access_token': access_token, 'class_id': '1000', 'nickname': name}
+        name = 'Sxs'
+        params = {'access_token': self.access_token, 'class_id': '1079', 'nickname': name}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -25,9 +25,8 @@ class UpdatePersonInfo(unittest.TestCase):
 
     def test_updatePersonInfo_name(self):
         """修改个人信息---修改姓名"""
-        access_token = Token.getToken()
         name = '苏珊'
-        params = {'access_token': access_token, 'class_id': '1000', 'name': name}
+        params = {'access_token': self.access_token, 'class_id': '1079', 'name': name}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -38,9 +37,8 @@ class UpdatePersonInfo(unittest.TestCase):
 
     def test_updatePersonInfo_company(self):
         """修改个人信息---修改企业"""
-        access_token = Token.getToken()
         company = 'MBA'
-        params = {'access_token': access_token, 'class_id': '1000', 'company': company}
+        params = {'access_token': self.access_token, 'class_id': '1079', 'company': company}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -51,9 +49,8 @@ class UpdatePersonInfo(unittest.TestCase):
 
     def test_updatePersonInfo_job(self):
         """修改个人信息---修改岗位"""
-        access_token = Token.getToken()
         job = '测试'
-        params = {'access_token': access_token, 'class_id': '1000', 'job': job}
+        params = {'access_token': self.access_token, 'class_id': '1079', 'job': job}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -64,7 +61,7 @@ class UpdatePersonInfo(unittest.TestCase):
 
     def test_updatePersonInfo_noToken(self):
         """修改个人信息---未传token"""
-        params = {'access_token': "", 'class_id': '1000', 'nickname': "Sxs1"}
+        params = {'access_token': "", 'class_id': '1079', 'nickname': "Sxs1"}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -72,8 +69,7 @@ class UpdatePersonInfo(unittest.TestCase):
 
     def test_updatePersonInfo_noClassId(self):
         """修改个人信息---未传classId"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token, 'nickname': "Sxs1"}
+        params = {'access_token': self.access_token, 'nickname': "Sxs1"}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -81,8 +77,7 @@ class UpdatePersonInfo(unittest.TestCase):
 
     def test_updatePersonInfo_noParams(self):
         """修改个人信息---未传参数"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token, 'class_id': "1000"}
+        params = {'access_token': self.access_token, 'class_id': "1079"}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -95,7 +90,7 @@ def select_data(params):
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "SELECT "+params+" FROM mbalib_user_data WHERE data_user_id='6191349'"
+    query = "SELECT "+params+" FROM mbalib_user_data WHERE data_user_id='6191496'"
     cs1.execute(query)
     result = cs1.fetchall()[0][0]
     return result
@@ -107,7 +102,7 @@ def delete():
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "delete FROM mbalib_user_data WHERE data_user_id='6191349'"
+    query = "delete FROM mbalib_user_data WHERE data_user_id='6191496'"
     try:
         cs1.execute(query)
         conn.commit()

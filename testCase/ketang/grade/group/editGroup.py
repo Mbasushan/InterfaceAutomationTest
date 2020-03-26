@@ -19,7 +19,7 @@ class EditGroup(unittest.TestCase):
         groupId=createGroupBase.create_group(self,self.access_token)
         print("创建班级分组")
         #修改分组
-        params={'access_token':self.access_token,'group_id':groupId,'class_id':1003,'name':'修改分组'}
+        params={'access_token':self.access_token,'group_id':groupId,'class_id':1079,'name':'修改分组'}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -34,7 +34,7 @@ class EditGroup(unittest.TestCase):
         # 创建分组
         groupId = createGroupBase.create_group(self,self.access_token)
         print("创建班级分组")
-        params = {'access_token': "", 'group_id': groupId, 'class_id': 1003, 'name': '修改分组'}
+        params = {'access_token': "", 'group_id': groupId, 'class_id': 1079, 'name': '修改分组'}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -60,7 +60,7 @@ class EditGroup(unittest.TestCase):
 
     def test_editGroup_noGroupId(self):
         """修改班级分组---未传groupId"""
-        params = {'access_token': self.access_token, 'class_id': 1003,  'name': '修改分组'}
+        params = {'access_token': self.access_token, 'class_id': 1079,  'name': '修改分组'}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -71,7 +71,7 @@ class EditGroup(unittest.TestCase):
         # 创建分组
         groupId = createGroupBase.create_group(self,self.access_token)
         print("创建班级分组")
-        params = {'access_token': self.access_token, 'group_id': groupId,  'class_id': 1003}
+        params = {'access_token': self.access_token, 'group_id': groupId,  'class_id': 1079}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)

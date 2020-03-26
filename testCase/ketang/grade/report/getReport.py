@@ -31,7 +31,7 @@ class GetReport(unittest.TestCase):
 
     def test_getReport_normal(self):
         """获取班级报表信息---普通成员获取"""
-        access_token=Token.get_token_login('苏珊15','123456')
+        access_token=Token.get_token_login('sxs11','123456')
         params={'access_token':access_token,'class_id':1000}
         response=requests.get(self.base_url,params)
         result=response.json()
