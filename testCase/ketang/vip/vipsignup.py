@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 import unittest
 import requests
-import testCase.common.getToken as getToken
+import testCase.common.getToken as Token
 import db_fixture.mysql_db as mySqlConnect
 
 #vip免费听
@@ -10,11 +10,11 @@ class Vipsignup(unittest.TestCase):
 
     def setUp(self):
         self.base_url = "http://ke.test.mbalib.com/vipsignup/signup"
+        self.access_token=Token.get_token_login('sxs14','123456')
 
     def test_vipsingup_course(self):
         """课堂单课-vip免费听"""
-        access_token=getToken.getToken()
-        params={'item_type':'course','item_id':'8520014','access_token':access_token}
+        params={'item_type':'course','item_id':'8520014','access_token':self.access_token}
         response=requests.post(self.base_url,params)
         reslut=response.json()
         print(reslut)
@@ -28,9 +28,8 @@ class Vipsignup(unittest.TestCase):
 
     def test_vipsingup_column(self):
         """课堂专栏-vip免费听"""
-        access_token=getToken.getToken()
         id = '258'
-        params={'item_type':'column','item_id':id,'access_token':access_token}
+        params={'item_type':'column','item_id':id,'access_token':self.access_token}
         response=requests.post(self.base_url,params)
         reslut=response.json()
         print(reslut)
@@ -43,9 +42,8 @@ class Vipsignup(unittest.TestCase):
 
     def test_vipsingup_package(self):
         """课堂课程包-vip免费听"""
-        access_token=getToken.getToken()
-        id='1002'
-        params={'item_type':'package','item_id':id,'access_token':access_token}
+        id='1014'
+        params={'item_type':'package','item_id':id,'access_token':self.access_token}
         response=requests.post(self.base_url,params)
         reslut=response.json()
         print(reslut)
@@ -82,8 +80,7 @@ class Vipsignup(unittest.TestCase):
 
     def test_vipsingup_course_noID(self):
         """课堂单课-vip免费听:未传单课id"""
-        access_token = getToken.getToken()
-        params={'item_type':'course','access_token':access_token}
+        params={'item_type':'course','access_token':self.access_token}
         response=requests.post(self.base_url,params)
         reslut=response.json()
         print(reslut)
@@ -91,8 +88,7 @@ class Vipsignup(unittest.TestCase):
 
     def test_vipsingup_column_noID(self):
         """课堂专栏-vip免费听:未传专栏id"""
-        access_token = getToken.getToken()
-        params={'item_type':'column','access_token':access_token}
+        params={'item_type':'column','access_token':self.access_token}
         response=requests.post(self.base_url,params)
         reslut=response.json()
         print(reslut)
@@ -100,8 +96,7 @@ class Vipsignup(unittest.TestCase):
 
     def test_vipsingup_package_noID(self):
         """课堂课程包-vip免费听:未传课程包id"""
-        access_token = getToken.getToken()
-        params = {'item_type': 'package', 'access_token': access_token}
+        params = {'item_type': 'package', 'access_token': self.access_token}
         response = requests.post(self.base_url, params)
         reslut = response.json()
         print(reslut)
@@ -109,8 +104,7 @@ class Vipsignup(unittest.TestCase):
 
     def test_vipsingup_course_noItem_type(self):
         """课堂单课-vip免费听:未传课程类型"""
-        access_token = getToken.getToken()
-        params={'item_id':'8520014','access_token':access_token}
+        params={'item_id':'8520014','access_token':self.access_token}
         response=requests.post(self.base_url,params)
         reslut=response.json()
         print(reslut)
@@ -118,8 +112,7 @@ class Vipsignup(unittest.TestCase):
 
     def test_vipsingup_column_noItem_type(self):
         """课堂专栏-vip免费听:未传专栏类型"""
-        access_token = getToken.getToken()
-        params={'item_id':'8520014','access_token':access_token}
+        params={'item_id':'8520014','access_token':self.access_token}
         response=requests.post(self.base_url,params)
         reslut=response.json()
         print(reslut)
@@ -127,8 +120,7 @@ class Vipsignup(unittest.TestCase):
 
     def test_vipsingup_package_noItem_type(self):
         """课堂专栏-vip免费听:未传专栏类型"""
-        access_token = getToken.getToken()
-        params = {'item_id': '8520014', 'access_token': access_token}
+        params = {'item_id': '8520014', 'access_token': self.access_token}
         response = requests.post(self.base_url, params)
         reslut = response.json()
         print(reslut)
@@ -141,7 +133,7 @@ def get_vs_id(id):
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "SELECT vs_id FROM ketang_vip_signup WHERE vs_user_id='20035' AND vs_item_id='"+id+"'"
+    query = "SELECT vs_id FROM ketang_vip_signup WHERE vs_user_id='20271' AND vs_item_id='"+id+"'"
     cs1.execute(query)
     vs_id = cs1.fetchone()[0]
     return vs_id
@@ -171,7 +163,7 @@ def delete_course_singup(id):
     # 获取cursor对象
     cs1 = conn.cursor()
     # 查询主题信息
-    query = "delete  FROM ketang_course_signup WHERE signup_user_id = '20035' AND signup_course_id='" + id + "'"
+    query = "delete  FROM ketang_course_signup WHERE signup_user_id = '20271' AND signup_course_id='" + id + "'"
     try:
         cs1.execute(query)
         conn.commit()
