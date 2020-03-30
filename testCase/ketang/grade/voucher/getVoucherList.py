@@ -39,8 +39,8 @@ class GetVoucherList(unittest.TestCase):
     def test_getVoucherList_noJoinClass(self):
         """获取班级优惠劵列表---用户不是该班级成员"""
         access_token = Token.getToken()
-        params = {'access_token': access_token,'class_id':1004}
+        params = {'access_token': access_token,'class_id':1079}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
-        self.assertEqual(result['error'], '您没有权限进行操作')
+        self.assertEqual(len(result['data']['list']), 0)

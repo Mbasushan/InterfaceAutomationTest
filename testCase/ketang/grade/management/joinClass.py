@@ -50,6 +50,20 @@ class JoinClass(unittest.TestCase):
         print(result)
         self.assertEqual(result['error'], '参数错误')
 
+    def test_joinClass_remark(self):
+        """申请加入班级-填写备注"""
+        access_token = Token.get_token_login('sxs16', '123456')
+        params = {'access_token': access_token, 'class_id': '1079','remark':'备注'}
+        flag = isJoin('20392','140')
+        if flag:
+            print("已加入班级")
+            # 删除该条数据
+            delete()
+        response = requests.post(self.base_url, params)
+        result = response.json()
+        print(result)
+        self.assertEqual(len(result['data']), 0)
+
 #查找是否加入班级
 def isJoin(userId,classId):
     # 连接数据库
@@ -70,3 +84,21 @@ def isJoin(userId,classId):
             return False
     else:
         return False
+
+#删除已加入班级的数据
+def delete():
+    # 连接数据库
+    conn = mySqlConnect.my_db()
+    # 获取cursor对象
+    cs1 = conn.cursor()
+    # 查询主题信息
+    query = "delete FROM ketang_class_member WHERE member_user_id='20392' AND member_class_id=140"
+    try:
+        cs1.execute(query)
+        conn.commit()
+    except:
+        conn.rollback()
+    # 关闭cursor对象
+    cs1.close()
+    # 关闭connection对象
+    conn.close()

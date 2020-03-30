@@ -4,7 +4,7 @@ import testCase.common.getToken as Token
 
 
 #学习之星
-class GetClassList(unittest.TestCase):
+class StudyStarList(unittest.TestCase):
 
     def setUp(self):
         self.base_url='http://ke.test.mbalib.com/class/studyStarList'
