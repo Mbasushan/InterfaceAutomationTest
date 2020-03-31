@@ -109,7 +109,7 @@ def course_join_groupbooking(self,id):
 #专栏参团支付页
 def column_join_groupbooking(self,id):
     #参团
-    params1 = {'access_token': Token.get_token_login('苏珊15','123456'), 'type': 'join_groupbooking', 'item_type': 'column', 'item_id': id}
+    params1 = {'access_token': Token.get_token_login('sxs15','123456'), 'type': 'join_groupbooking', 'item_type': 'column', 'item_id': id}
     response = requests.post(base_url, params1)
     result1 = response.json()
     print(result1)

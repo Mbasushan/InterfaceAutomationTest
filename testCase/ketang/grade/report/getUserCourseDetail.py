@@ -9,11 +9,11 @@ class GetUserCourseDetail(unittest.TestCase):
 
     def setUp(self):
         self.base_url='http://ke.test.mbalib.com/class/getUserCourseDetail'
+        self.access_token=Token.get_token_login('sxs14','123456')
 
     def test_course_detail(self):
         """获取成员课程详情 (课程学习明细)"""
-        access_token=Token.getToken()
-        params={'access_token':access_token,'class_id':1000,'user_id':20035,'type':'course','item_id':8520014}
+        params={'access_token':self.access_token,'class_id':1079,'user_id':20314,'type':'course','item_id':8526372}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
@@ -21,8 +21,7 @@ class GetUserCourseDetail(unittest.TestCase):
 
     def test_coloumn_detail(self):
         """获取成员专栏详情 (课程学习明细)"""
-        access_token=Token.getToken()
-        params={'access_token':access_token,'class_id':1000,'user_id':20035,'type':'column','item_id':258}
+        params={'access_token':self.access_token,'class_id':1079,'user_id':20314,'type':'column','item_id':258}
         response=requests.get(self.base_url,params)
         result=response.json()
         print(result)
@@ -30,7 +29,7 @@ class GetUserCourseDetail(unittest.TestCase):
 
     def test_detail_noToken(self):
         """获取成员课程详情 (课程学习明细)---未登录"""
-        params = {'access_token': "", 'class_id': 1000, 'user_id': 20035, 'type': 'course','item_id': 8520014}
+        params = {'access_token': "", 'class_id': 1079, 'user_id': 20314, 'type': 'course','item_id': 8526372}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
@@ -38,8 +37,7 @@ class GetUserCourseDetail(unittest.TestCase):
 
     def test_detail_noClassId(self):
         """获取成员课程详情 (课程学习明细)---未传班级id"""
-        access_token=Token.getToken()
-        params = {'access_token': access_token, 'user_id': 20035, 'type': 'course','item_id': 8520014}
+        params = {'access_token': self.access_token, 'user_id': 20314, 'type': 'course','item_id': 8526372}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
@@ -57,7 +55,7 @@ class GetUserCourseDetail(unittest.TestCase):
     def test_detail_noType(self):
         """获取成员课程详情 (课程学习明细)---未传课程类型"""
         access_token = Token.getToken()
-        params = {'access_token': access_token, 'class_id': 1000,'user_id': 20035, 'item_id': 8520014}
+        params = {'access_token': access_token, 'class_id': 1000,'user_id': 20314, 'item_id': 8520014}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)
@@ -65,8 +63,7 @@ class GetUserCourseDetail(unittest.TestCase):
 
     def test_detail_noItemId(self):
         """获取成员课程详情 (课程学习明细)---未传课程id"""
-        access_token = Token.getToken()
-        params = {'access_token': access_token, 'class_id': 1000,'user_id': 20035,'type': 'course'}
+        params = {'access_token': self.access_token, 'class_id': 1079,'user_id': 20314,'type': 'course'}
         response = requests.get(self.base_url, params)
         result = response.json()
         print(result)

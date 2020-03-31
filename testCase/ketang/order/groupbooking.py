@@ -29,16 +29,23 @@ class GroupBooking(unittest.TestCase):
         response=requests.post(self.base_url,params)
         re = response.json()
         self.assertEqual(re['state'],'success')
+
         if re['state']=='success':
             order_number=re['order_number']
             fee= getOrderFee.getFee(str(re['id']))
             print(fee)
             #虚拟支付
             virtualPayment.ketang_pay(self,order_number,fee)
+            # 获取开团id
+            gList = groupbookingList.groupBookingList(self, 'sxs14', '8520014', 'course')
+            item_id = gList[0]['gid']
             #删除拼团
             deleteGroupBooking.delete('20271', '660')
             #删除订单
             deleteOrder.delete(order_number)
+            # 删除拼团成员表
+            deleteGroupBooking.deleteMember(item_id)
+
 
     def test_column_create_groupbooking(self):
         """专栏开团"""
@@ -57,10 +64,16 @@ class GroupBooking(unittest.TestCase):
             print(fee)
             #虚拟支付
             virtualPayment.ketang_pay(self,order_number,fee)
+            # 获取开团id
+            gList = groupbookingList.groupBookingList(self, 'sxs14', '57', 'column')
+            item_id = gList[0]['gid']
             #删除拼团
             deleteGroupBooking.delete('20271', '57')
             #删除订单
             deleteOrder.delete(order_number)
+            # 删除拼团成员表
+            deleteGroupBooking.deleteMember(item_id)
+
 
     def test_package_create_groupbooking(self):
         """课程包开团"""
@@ -79,10 +92,15 @@ class GroupBooking(unittest.TestCase):
             print(fee)
             #虚拟支付
             virtualPayment.ketang_pay(self,order_number,fee)
+            # 获取开团id
+            gList = groupbookingList.groupBookingList(self, 'sxs14', '1017', 'package')
+            item_id = gList[0]['gid']
             #删除拼团
             deleteGroupBooking.delete('20271', '1017')
             #删除订单
             deleteOrder.delete(order_number)
+            # 删除拼团成员表
+            deleteGroupBooking.deleteMember(item_id)
 
     def test_course_join_groupbooking(self):
         """课程参团"""
@@ -124,6 +142,8 @@ class GroupBooking(unittest.TestCase):
             virtualPayment.ketang_pay(self, order_number, fee)
             # 删除拼团
             deleteGroupBooking.delete('20271', '660')
+            # 删除拼团成员表
+            deleteGroupBooking.deleteMember(item_id)
             # 删除订单
             deleteOrder.delete(order_number)
             # 删除报名
@@ -154,13 +174,13 @@ class GroupBooking(unittest.TestCase):
             # 虚拟支付
             virtualPayment.ketang_pay(self, order_number1, fee)
         #获取开团id
-        gList=groupbookingList.groupBookingList(self,'苏珊15','57','column')
+        gList=groupbookingList.groupBookingList(self,'sxs15','57','column')
         item_id=gList[0]['gid']
         #参团支付页
         joinRs = previewBase.column_join_groupbooking(self,item_id)
         price = joinRs['item']['price']
         #拼团发起支付
-        params = {'access_token': Token.get_token_login('苏珊15','123456'), 'type': 'join', 'gid': item_id, 'price': price,
+        params = {'access_token': Token.get_token_login('sxs15','123456'), 'type': 'join', 'gid': item_id, 'price': price,
                   'payInstru': 'weixin'}
         response = requests.post(self.base_url, params)
         res = response.json()
@@ -173,12 +193,15 @@ class GroupBooking(unittest.TestCase):
             virtualPayment.ketang_pay(self, order_number, fee)
             # 删除拼团
             deleteGroupBooking.delete('20271', '57')
+            # 删除拼团成员表
+            deleteGroupBooking.deleteMember(item_id)
             # 删除订单
             deleteOrder.delete(order_number)
              # 删除报名
             delSign.delete('20271', '57')
-            delSign.delete('20064', '57')
+            delSign.delete('20314', '57')
         deleteOrder.delete(order_number1)
+
 
     def test_package_join_groupbooking(self):
         """课程包参团"""
@@ -220,6 +243,8 @@ class GroupBooking(unittest.TestCase):
             virtualPayment.ketang_pay(self, order_number, fee)
             # 删除拼团
             deleteGroupBooking.delete('20271', '1017')
+            # 删除拼团成员表
+            deleteGroupBooking.deleteMember(item_id)
             # 删除订单
             deleteOrder.delete(order_number)
              # 删除报名
