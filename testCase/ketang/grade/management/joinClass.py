@@ -26,7 +26,7 @@ class JoinClass(unittest.TestCase):
         if flag:
             print("已加入班级")
         else:
-            response1 = requests.post(self.base_url, params)
+            requests.post(self.base_url, params)
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
