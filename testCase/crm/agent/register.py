@@ -11,6 +11,7 @@ class RegisterAgent(unittest.TestCase):
 
     def setUp(self):
         self.base_url='http://crm.test.mbalib.com/agent/register'
+        self.access_token=Token.get_token_login('sxs14','123456')
 
     def test_register(self):
         """注册代理商"""
@@ -28,7 +29,7 @@ class RegisterAgent(unittest.TestCase):
 
     def test_register_noName(self):
         """注册代理商---未传代理商名称"""
-        params = {'access_token': Token.get_token_login('sxs14','123456'), 'name': '','contacts': '测试人员', 'mobile': '14655456'}
+        params = {'access_token': self.access_token, 'name': '','contacts': '测试人员', 'mobile': '14655456'}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -36,7 +37,7 @@ class RegisterAgent(unittest.TestCase):
 
     def test_register_noContacts(self):
         """注册代理商---未传联系人"""
-        params = {'access_token': Token.get_token_login('sxs14','123456'), 'name': '接口测试-代理商系统','contacts': '', 'mobile': '14655456'}
+        params = {'access_token': self.access_token, 'name': '接口测试-代理商系统','contacts': '', 'mobile': '14655456'}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -44,7 +45,7 @@ class RegisterAgent(unittest.TestCase):
 
     def test_register_noMobile(self):
         """注册代理商---未传联系人手机号"""
-        params = {'access_token': Token.get_token_login('sxs14','123456'), 'name': '接口测试-代理商系统','contacts': '测试人员', 'mobile': ''}
+        params = {'access_token': self.access_token, 'name': '接口测试-代理商系统','contacts': '测试人员', 'mobile': ''}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)
@@ -53,7 +54,7 @@ class RegisterAgent(unittest.TestCase):
     def test_register_repeat(self):
         """注册代理商---重复注册"""
         for i in range(2):
-            access_token=Token.get_token_login('sxs14','123456')
+            access_token=self.access_token
             params = {'access_token': access_token, 'name': '接口测试-代理商系统', 'contacts': '测试人员', 'mobile': '14655456'}
             response = requests.post(self.base_url, params)
             result = response.json()
