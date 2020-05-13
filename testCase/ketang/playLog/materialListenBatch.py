@@ -40,7 +40,7 @@ class MaterialListenBatch(unittest.TestCase):
         response=requests.post(self.base_url,params={"data":data,"access_token":access_token},headers=headers)
         result=response.json()
         print(result)
-        self.assertEqual(result['errorno'],'未登陆')
+        self.assertEqual(result['error'],'获取账号信息失败')
 
     def test_materialListenBatch_android(self):
         """批量提交播放日志--android"""
@@ -68,4 +68,4 @@ class MaterialListenBatch(unittest.TestCase):
         data.append({"id":795,"duration":40,"cid":"92","ctype":"column","sign":sign2})
         response=requests.post(self.base_url,params={"data":data,"access_token":access_token},headers=headers)
         result=response.json()
-        self.assertEqual(result['errorno'], '未登陆')
+        self.assertEqual(result['error'], '获取账号信息失败')

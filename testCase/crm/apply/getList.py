@@ -15,7 +15,7 @@ class GetApplyList(unittest.TestCase):
     def test_getApplyList(self):
         """获取通知列表-未处理"""
         list=getApplyList.get_apply_list(self,self.access_token,'1')
-        if len(list)!=0:
+        if list!=None:
             print("该代理商未处理通知条数为：",len(list))
         else:
             print("该代理商未已处理通知")
@@ -23,7 +23,7 @@ class GetApplyList(unittest.TestCase):
     def test_getApplyList_processed(self):
         """获取通知列表-已处理"""
         list=getApplyList.get_apply_list(self,self.access_token,'2')
-        if len(list)!=0:
+        if list!=None:
             print("该代理商已处理通知条数为：",len(list))
         else:
             print("该代理商无已处理通知")
@@ -31,7 +31,7 @@ class GetApplyList(unittest.TestCase):
     def test_getApplyList_normal(self):
         """获取通知列表-普通成员"""
         list = getApplyList.get_apply_list(self, Token.get_token_login('Sxs15','123456'), '')
-        if len(list) != 0:
+        if list!=None:
             print("该成员的通知条数为：", len(list))
         else:
             print("该成员无通知")

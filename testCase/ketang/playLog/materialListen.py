@@ -42,7 +42,8 @@ class MateriaListen(unittest.TestCase):
         params={"access_token":access_token,"id":795,"duration":60,"cid":"92","ctype":"column","sign":sign,"starttime":"0","endtime":"60"}
         response=requests.post(self.base_url,params=params)
         result=response.json()
-        self.assertEqual(result['errorno'],'未登陆')
+        print(result)
+        self.assertEqual(result['error'],'获取账号信息失败')
 
     def test_materiaListen_noSign(self):
         """用户播放记录-章节学习进度-未传sign"""

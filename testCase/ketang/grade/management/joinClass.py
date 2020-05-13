@@ -25,6 +25,8 @@ class JoinClass(unittest.TestCase):
         flag = isJoin('20059','43')
         if flag:
             print("已加入班级")
+            # 删除该条数据
+            delete()
         else:
             requests.post(self.base_url, params)
         response = requests.post(self.base_url, params)

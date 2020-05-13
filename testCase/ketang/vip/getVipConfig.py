@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 import unittest
 import requests
+import testCase.ketang.vip.base.vipConfig as vipConfig
 
 #会员配置
 class VIPConfig(unittest.TestCase):
@@ -11,8 +12,4 @@ class VIPConfig(unittest.TestCase):
 
     def test_getVipConfig(self):
         """获取课堂vip会员配置"""
-        response = requests.post(self.base_url)
-        result = response.json()
-        self.assertEqual(result['state'],'success')
-        print("会员配置数据如下：")
-        print(result['data'])
+        vipConfig.get_vipConfig(self)

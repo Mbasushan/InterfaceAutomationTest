@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 import requests
 import testCase.common.getToken as Token
+import testCase.ketang.vip.base.vipConfig as vipConfig
 
 base_url='http://ke.test.mbalib.com/order/preview'
 access_token = Token.get_token_login('sxs14', '123456')
@@ -62,12 +63,19 @@ def gift_package_preview(self):
 
 #课堂VIP会员支付页
 def vip_preview(self):
-    params = {'access_token': access_token, 'type': 'vip', 'item_type': 'package', 'item_id': 'ketang_vip_year '}
-    response = requests.post(base_url, params)
-    result = response.json()
-    print(result)
-    self.assertNotEqual(len(result['item']), 0)
-    return result
+    #获取会员配置
+    data=vipConfig.get_vipConfig(self)
+    if data!=None:
+        item_id=data[0]['event_id']
+        params = {'access_token': access_token, 'type': 'vip', 'item_type': 'package', 'item_id':item_id}
+        response = requests.post(base_url, params)
+        result = response.json()
+        print(result)
+        self.assertNotEqual(len(result['item']), 0)
+        return result
+    else:
+        print('未有会员配置')
+        return None
 
 #单课开团支付页
 def course_groupbooking(self):
