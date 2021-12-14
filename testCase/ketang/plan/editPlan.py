@@ -51,7 +51,9 @@ class Editplan(unittest.TestCase):
         """创建用户个人学习计划---未登录"""
         time=getTime.now_time('%Y-%m-%d')
         courses='[{ "item_type": "column","item_id": 258,"starttime":"'+time+'","learn_style": "material","learn_duration": 3,"learn_days": "0,1,2,3,4,5,6","task":1}]'
-        params={'title':'接口创建学习计划','access_token':"",'courses':courses,'start_time':time}
+        detail = '[{"state": "learn","day": "' + time + '","materials": [{"material_id": 896,"item_type": "column","item_id": 258},{"material_id": 897,"item_type": "column","item_id": 258}]}]'
+        params = {'title': '接口创建学习计划', 'desc': '描述描述', 'state': 'new', 'access_token': '', 'courses': courses,
+                  'start_time': time, 'detail': detail}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -69,11 +71,13 @@ class Editplan(unittest.TestCase):
         self.assertEqual(result['error'], '课程未提交')
 
     def test_creatPlan_noStartTime(self):
-        """创建用户个人学习计划---未登录"""
+        """创建用户个人学习计划---未传开始时间"""
         access_token = Token.getToken()
         time=getTime.now_time('%Y-%m-%d')
         courses='[{ "item_type": "column","item_id": 258,"starttime":"'+time+'","learn_style": "material","learn_duration": 3,"learn_days": "0,1,2,3,4,5,6","task":1}]'
-        params={'title':'接口创建学习计划','access_token':access_token,'courses':courses}
+        detail = '[{"state": "learn","day": "' + time + '","materials": [{"material_id": 896,"item_type": "column","item_id": 258},{"material_id": 897,"item_type": "column","item_id": 258}]}]'
+        params = {'title': '接口创建学习计划', 'desc': '描述描述', 'state': 'new', 'access_token': access_token, 'courses': courses,
+                  'start_time': '', 'detail': detail}
         response=requests.post(self.base_url,params)
         result=response.json()
         print(result)
@@ -85,10 +89,11 @@ class Editplan(unittest.TestCase):
         time = getTime.now_time('%Y-%m-%d')
         courses = '[{ "item_type": "column","item_id": 258,"starttime":"' + time + '","learn_style": "material","learn_duration": 3,"learn_days": "0,1,2,3,4,5,6","task":1}]'
         # 以2进制方式打开图片
-        with open('D:/InterfaceAutomationTest/image/1.png', "rb")as f_abs:
+        with open('E:/脚本/InterfaceAutomationTest/image/1.png', "rb")as f_abs:
             body = {'img': ('1.jpg', f_abs, 'image/jpg')}
+            detail = '[{"state": "learn","day": "' + time + '","materials": [{"material_id": 896,"item_type": "column","item_id": 258},{"material_id": 897,"item_type": "column","item_id": 258}]}]'
             params = {'title': '接口创建学习计划', 'desc': '描述描述', 'state': 'new', 'access_token': access_token,
-                      'courses': courses, 'start_time': time}
+                      'courses': courses,'start_time': time, 'detail': detail}
             response = requests.post(self.base_url, params, files=body)
             result = json.loads(response.text)
             print(result)
@@ -100,10 +105,12 @@ class Editplan(unittest.TestCase):
 
     def test_creatPlan_classPlan_noJoinClass(self):
         """创建班级学习计划---不是该班级成员"""
-        access_token = Token.get_token_login('sxs14','123456')
+        access_token = Token.get_token_login('sxs16','123456')
         time = getTime.now_time('%Y-%m-%d')
         courses = '[{ "item_type": "column","item_id": 258,"starttime":"' + time + '","learn_style": "material","learn_duration": 3,"learn_days": "0,1,2,3,4,5,6","task":1}]'
-        params = {'title': '接口创建学习计划', 'desc': '描述描述','class_id':1000,'state':'new','access_token':access_token,'courses':courses,'start_time':time}
+        detail = '[{"state": "learn","day": "' + time + '","materials": [{"material_id": 896,"item_type": "column","item_id": 258},{"material_id": 897,"item_type": "column","item_id": 258}]}]'
+        params = {'title': '接口创建学习计划', 'desc': '描述描述','class_id':1000, 'state': 'new', 'access_token': access_token, 'courses': courses,
+                  'start_time': time, 'detail': detail}
         response = requests.post(self.base_url, params)
         result = response.json()
         print(result)

@@ -11,7 +11,7 @@ class GetRecommedCourses(unittest.TestCase):
         self.base_url = "http://ke.test.mbalib.com/api/GetRecommedCourses"
 
     def test_getRecommedCourses(self):
-        """随机课程(用于条目主页中显示的课程)"""
+        """随机课程(用于条目主页中显示的课程)	数量（默认5)"""
         response=requests.get(self.base_url,params={'keyword':'MBA智库特邀讲师	','num':5})
         result=response.json()
         print(result)

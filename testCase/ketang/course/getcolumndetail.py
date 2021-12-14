@@ -15,6 +15,7 @@ class ColumnDetail(unittest.TestCase):
         access_token=Token.getToken()
         response=requests.post(self.base_url,params={'id':258,'access_token':access_token})
         result=response.json()
+        print(result)
         self.assertEqual(result['state'],'success')
 
     def test_columnDetail_noToken(self):
