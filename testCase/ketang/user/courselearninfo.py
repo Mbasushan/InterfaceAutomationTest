@@ -29,7 +29,7 @@ class Courselearninfo(unittest.TestCase):
         print(result)
 
 
-    def test_courselearninfo(self):
+    def test_courselearninfo_course(self):
         """用用户课程每日学习时长数据-单课"""
         #获取当前日期
         endTime=date.today().strftime("%Y-%m-%d")
