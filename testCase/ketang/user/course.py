@@ -4,7 +4,7 @@ import math
 import unittest
 import requests
 import testCase.common.getToken as Token
-import db_fixture.mysql_db as mySqlConnect
+
 
 #用户购买的课程列表（新版）
 class Usecourses(unittest.TestCase):
