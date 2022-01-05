@@ -4,23 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/testCase/crm/goods/batchOpen.py" line="18" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5eabffb-7bad-40a6-af54-56e25d5fb261" name="Default Changelist" comment="暂时移出">
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestReport-1.0.1-py3.7.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestReport-1.0.1-py3.7.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestReport-1.0.1-py3.7.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestReport-1.0.1-py3.7.egg-info/installed-files.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestReport-1.0.1-py3.7.egg-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestRunner/HTMLTestRunner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestRunner/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestRunner_Python3-0.8.0-py3.7.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestRunner_Python3-0.8.0-py3.7.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestRunner_Python3-0.8.0-py3.7.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestRunner_Python3-0.8.0-py3.7.egg-info/installed-files.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestRunner_Python3-0.8.0-py3.7.egg-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/HTMLTestRunner_Python3-0.8.0-py3.7.egg-info/zip-safe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/htmltestreport/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/htmltestreport/core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/htmltestreport/template.py" afterDir="false" />
+    <list default="true" id="b5eabffb-7bad-40a6-af54-56e25d5fb261" name="Default Changelist" comment="文创商品">
+      <change afterPath="$PROJECT_DIR$/report/2022-01-05 14-48-30.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCase/GoodsSystem/getGoodsDetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/GoodsSystem/getGoodsDetail.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1068,7 +1055,7 @@
       <workItem from="1641276367910" duration="57000" />
       <workItem from="1641276476567" duration="3623000" />
       <workItem from="1641364181087" duration="301000" />
-      <workItem from="1641364509045" duration="361000" />
+      <workItem from="1641364509045" duration="851000" />
     </task>
     <task id="LOCAL-00001" summary="删除测试报告">
       <created>1566205851633</created>
@@ -1364,7 +1351,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641361530172</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="文创商品">
+      <created>1641364921696</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1641364921696</updated>
+    </task>
+    <task id="LOCAL-00044" summary="文创商品">
+      <created>1641365020022</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1641365020022</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1446,7 +1447,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="课程" />
     <MESSAGE value="课程支付、优惠券" />
     <MESSAGE value="大咖会员开通支付" />
     <MESSAGE value="班级代码调整" />
@@ -1471,7 +1471,8 @@
     <MESSAGE value="课堂，用户课程概况；&#10;课堂，用户课程每日学习时长数据；&#10;获取报名完成后需要填写的资料；&#10;用户证书列表；&#10;获取课程评价列表；&#10;提交评价；&#10;是否显示评价课程；" />
     <MESSAGE value="文创商品，商品列表；&#10;文创商品，商品详情页；&#10;文创商品，收货地址列表；&#10;文创商品，地址详情页；&#10;文创商品，添加/修改收货地址；&#10;文创商品，修改默认收货地址；&#10;文创商品，删除收货地址；&#10;文创商品，获取邮费；&#10;文创商品，订单列表；&#10;文创商品，创建订单；&#10;文创商品，订单收货；" />
     <MESSAGE value="暂时移出" />
-    <option name="LAST_COMMIT_MESSAGE" value="暂时移出" />
+    <MESSAGE value="文创商品" />
+    <option name="LAST_COMMIT_MESSAGE" value="文创商品" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1531,7 +1532,7 @@
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getOrderList_GetOrderList_test_getOrderList.coverage" NAME="Unittests for getOrderList.GetOrderList.test_getOrderList Coverage Results" MODIFIED="1640583769173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/order" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_addReceive_AddReceive_test_saveReceive_errorMobile.coverage" NAME="Unittests for addReceive.AddReceive.test_saveReceive_errorMobile Coverage Results" MODIFIED="1640328231803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/receive" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getMonthPlan_UserPlanList_test_getMonthPlan_noYear.coverage" NAME="Unittests for getMonthPlan.UserPlanList.test_getMonthPlan_noYear Coverage Results" MODIFIED="1640067703324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/plan" />
-    <SUITE FILE_PATH="coverage/InterfaceAutomationTest$run.coverage" NAME="run Coverage Results" MODIFIED="1641364863696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/InterfaceAutomationTest$run.coverage" NAME="run Coverage Results" MODIFIED="1641365310419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getcolumndetail_ColumnDetail_test_columnDetail_noId.coverage" NAME="Unittests for getcolumndetail.ColumnDetail.test_columnDetail_noId Coverage Results" MODIFIED="1639029271435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/course" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getcoursedetail_CourseDetail_test_courseDetail.coverage" NAME="Unittests for getcoursedetail.CourseDetail.test_courseDetail Coverage Results" MODIFIED="1639029304575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/course" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getReceiveDetail_GetReceiveDetail_test_getGoodsDetail.coverage" NAME="Unittests for getReceiveDetail.GetReceiveDetail.test_getGoodsDetail Coverage Results" MODIFIED="1640162938454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/receive" />

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-import math
+
 import unittest
 import requests
 import testCase.common.getToken as Token
