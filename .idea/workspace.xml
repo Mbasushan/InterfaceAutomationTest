@@ -6,8 +6,211 @@
   <component name="ChangeListManager">
     <list default="true" id="b5eabffb-7bad-40a6-af54-56e25d5fb261" name="Default Changelist" comment="文创商品">
       <change afterPath="$PROJECT_DIR$/report/2022-01-05 14-48-30.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testCase/common/isValidImge.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testCase/wikiDictum/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testCase/wikiDictum/morningPost.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testCase/wikiDictum/wikiDictum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ArgImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/BdfFontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/BmpImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/BufrStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ContainerIO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/CurImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/DcxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/EpsImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ExifTags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/FitsStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/FliImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/FontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/FpxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/GbrImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/GdImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/GifImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/GimpGradientFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/GimpPaletteFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/GribStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Hdf5StubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/IcnsImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/IcoImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageChops.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageCms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageColor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageDraw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageDraw2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageEnhance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageFileIO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageFilter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageFont.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageGL.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageGrab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageMath.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageMode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageOps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImagePalette.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImagePath.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageQt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageSequence.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageShow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageStat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageTk.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageTransform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImageWin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/ImtImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/IptcImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/JpegImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/McIdasImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/MicImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/MpegImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/MspImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/OleFileIO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/BdfFontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/BlpImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/BmpImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/BufrStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ContainerIO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/CurImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/DcxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/DdsImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/EpsImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ExifTags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FitsStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FliImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FpxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FtexImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GbrImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GdImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GifImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GimpGradientFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GimpPaletteFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GribStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/Hdf5StubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/IcnsImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/IcoImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/Image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageChops.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageCms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageColor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageDraw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageDraw2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageEnhance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageFilter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageFont.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageGrab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageMath.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageMode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageMorph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageOps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImagePalette.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImagePath.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageQt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageSequence.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageShow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageStat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageTk.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageTransform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageWin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImtImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/IptcImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/Jpeg2KImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/JpegImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/JpegPresets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/McIdasImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/MicImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/MpegImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/MpoImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/MspImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PSDraw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PaletteFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PalmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PcdImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PcfFontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PcxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PdfImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PdfParser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PixarImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PngImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PpmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PsdImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PyAccess.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/SgiImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/SpiderImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/SunImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/TarIO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/TgaImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/TiffImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/TiffTags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/WalImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/WebPImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/WmfImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/XVThumbImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/XbmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/XpmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/__main__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_binary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imaging.cp37-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingcms.cp37-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingft.cp37-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingmath.cp37-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingmorph.cp37-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingtk.cp37-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_tkinter_finder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_webp.cp37-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/concrt140.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/features.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/msvcp140.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/msvcp140_1.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/msvcp140_2.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/msvcp140_atomic_wait.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/msvcp140_codecvt_ids.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/vccorlib140.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/vcruntime140.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/vcruntime140_1.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PSDraw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PaletteFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PalmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PcdImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PcfFontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PcxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PdfImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-9.0.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-9.0.0.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-9.0.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-9.0.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-9.0.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-9.0.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-9.0.0.dist-info/zip-safe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow_PIL-0.1.dev0-py3.7.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow_PIL-0.1.dev0-py3.7.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow_PIL-0.1.dev0-py3.7.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow_PIL-0.1.dev0-py3.7.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow_PIL-0.1.dev0-py3.7.egg-info/requires.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow_PIL-0.1.dev0-py3.7.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PixarImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PngImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PpmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/PsdImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/SgiImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/SpiderImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/SunImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/TarIO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/TgaImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/TiffImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/TiffTags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/WalImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/WmfImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/XVThumbImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/XbmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/XpmImagePlugin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCase/GoodsSystem/getGoodsDetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/GoodsSystem/getGoodsDetail.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -860,96 +1063,89 @@
       <recent name="D:\InterfaceAutomationTest\testCase\common" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="InterfaceAutomationTest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for createOrder.CreateOrder.test_createOrder_noGpID" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests for morningPost.MorningPost.test_morningPost">
+    <configuration name="Unittests for morningPost.MorningPost.test_detail" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="InterfaceAutomationTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/GoodsSystem/order" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/wikiDictum" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;createOrder.CreateOrder.test_createOrder_noGpID&quot;" />
+      <option name="_new_target" value="&quot;morningPost.MorningPost.test_detail&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for createOrder.CreateOrder.test_createOrder_noReceive_id" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for morningPost.MorningPost.test_morningPost" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="InterfaceAutomationTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/GoodsSystem/order" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/wikiDictum" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;createOrder.CreateOrder.test_createOrder_noReceive_id&quot;" />
+      <option name="_new_target" value="&quot;morningPost.MorningPost.test_morningPost&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for createOrder.CreateOrder.test_createOrder_nogId" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for wikiDictum.WikiDictum.test_wikiDictum_afamous" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="InterfaceAutomationTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/GoodsSystem/order" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/wikiDictum" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;createOrder.CreateOrder.test_createOrder_nogId&quot;" />
+      <option name="_new_target" value="&quot;wikiDictum.WikiDictum.test_wikiDictum_afamous&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for getReceiveDetail.GetReceiveDetail.test_getGoodsDetail_noId" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for wikiDictum.WikiDictum.test_wikiDictum_dailyword" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="InterfaceAutomationTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/GoodsSystem/receive" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/wikiDictum" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;getReceiveDetail.GetReceiveDetail.test_getGoodsDetail_noId&quot;" />
+      <option name="_new_target" value="&quot;wikiDictum.WikiDictum.test_wikiDictum_dailyword&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for wikiDictum.WikiDictum.test_wikiDictum_dailyword_page" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="InterfaceAutomationTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase/wikiDictum" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;wikiDictum.WikiDictum.test_wikiDictum_dailyword_page&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python tests.Unittests for getReceiveDetail.GetReceiveDetail.test_getGoodsDetail_noId" />
-        <item itemvalue="Python tests.Unittests for createOrder.CreateOrder.test_createOrder_noReceive_id" />
-        <item itemvalue="Python tests.Unittests for createOrder.CreateOrder.test_createOrder_noGpID" />
-        <item itemvalue="Python tests.Unittests for createOrder.CreateOrder.test_createOrder_nogId" />
+        <item itemvalue="Python tests.Unittests for morningPost.MorningPost.test_morningPost" />
+        <item itemvalue="Python tests.Unittests for morningPost.MorningPost.test_detail" />
+        <item itemvalue="Python tests.Unittests for wikiDictum.WikiDictum.test_wikiDictum_dailyword_page" />
+        <item itemvalue="Python tests.Unittests for wikiDictum.WikiDictum.test_wikiDictum_afamous" />
+        <item itemvalue="Python tests.Unittests for wikiDictum.WikiDictum.test_wikiDictum_dailyword" />
       </list>
     </recent_temporary>
   </component>
@@ -1055,7 +1251,10 @@
       <workItem from="1641276367910" duration="57000" />
       <workItem from="1641276476567" duration="3623000" />
       <workItem from="1641364181087" duration="301000" />
-      <workItem from="1641364509045" duration="851000" />
+      <workItem from="1641364509045" duration="6259000" />
+      <workItem from="1643179500040" duration="89000" />
+      <workItem from="1643179860046" duration="389000" />
+      <workItem from="1643180273662" duration="4588000" />
     </task>
     <task id="LOCAL-00001" summary="删除测试报告">
       <created>1566205851633</created>
@@ -1365,7 +1564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641365020022</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="文创商品">
+      <created>1641365377605</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1641365377605</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1512,6 +1718,7 @@
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_course_Usecourses_test_usecourses_noToken.coverage" NAME="Unittests for course.Usecourses.test_usecourses_noToken Coverage Results" MODIFIED="1639036219339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_addReceive_AddReceive_test_saveReceive_noCity.coverage" NAME="Unittests for addReceive.AddReceive.test_saveReceive_noCity Coverage Results" MODIFIED="1640327826277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/receive" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_showValuate_ShowValuate_test_show_noToken.coverage" NAME="Unittests for showValuate.ShowValuate.test_show_noToken Coverage Results" MODIFIED="1640327522273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/courseevaluate" />
+    <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_morningPost_MorningPost_test_morningPost.coverage" NAME="Unittests for morningPost.MorningPost.test_morningPost Coverage Results" MODIFIED="1643184869278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/wikiDictum" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getStickList_StickList_test_getStickList.coverage" NAME="Unittests for getStickList.StickList.test_getStickList Coverage Results" MODIFIED="1639029530551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/course" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getSignupOption_GetSignupOption_test_getSignupOption_noToken.coverage" NAME="Unittests for getSignupOption.GetSignupOption.test_getSignupOption_noToken Coverage Results" MODIFIED="1639554107554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getcolumndetail_ColumnDetail_test_columnDetail_errorId.coverage" NAME="Unittests for getcolumndetail.ColumnDetail.test_columnDetail_errorId Coverage Results" MODIFIED="1639029265427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/course" />
@@ -1522,15 +1729,18 @@
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getPostage_GetPostage_test_getPostage.coverage" NAME="Unittests for getPostage.GetPostage.test_getPostage Coverage Results" MODIFIED="1640337897572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getcoursedetail_Usecoursesdetail_test_getcoursedetail_course.coverage" NAME="Unittests for getcoursedetail.Usecoursesdetail.test_getcoursedetail_course Coverage Results" MODIFIED="1639465188336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getcoursedetail_Usecoursesdetail_test_getcoursedetail_noId.coverage" NAME="Unittests for getcoursedetail.Usecoursesdetail.test_getcoursedetail_noId Coverage Results" MODIFIED="1639465941502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
+    <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_morningPost_MorningPost_test_detail.coverage" NAME="Unittests for morningPost.MorningPost.test_detail Coverage Results" MODIFIED="1643184708279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/wikiDictum" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getcoursedetail_Usecoursesdetail_test_getcoursedetail_column.coverage" NAME="Unittests for getcoursedetail.Usecoursesdetail.test_getcoursedetail_column Coverage Results" MODIFIED="1639375045230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_setDefaultReceive_SetDefaultReceive_test_setDefaultReceive.coverage" NAME="Unittests for setDefaultReceive.SetDefaultReceive.test_setDefaultReceive Coverage Results" MODIFIED="1640337446454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/receive" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getCourseevaluate_Getcourseevaluate_test_getUserInfo_nocomment.coverage" NAME="Unittests for getCourseevaluate.Getcourseevaluate.test_getUserInfo_nocomment Coverage Results" MODIFIED="1639637644180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/courseevaluate" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getcoursedetail_CourseDetail_test_columnDetail_noId.coverage" NAME="Unittests for getcoursedetail.CourseDetail.test_columnDetail_noId Coverage Results" MODIFIED="1639029312349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/course" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getPostage_GetPostage_test_getPostage_nogId.coverage" NAME="Unittests for getPostage.GetPostage.test_getPostage_nogId Coverage Results" MODIFIED="1640338428240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem" />
+    <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_wikiDictum_WikiDictum_test_wikiDictum.coverage" NAME="Unittests for wikiDictum.WikiDictum.test_wikiDictum Coverage Results" MODIFIED="1641366304493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/wikiDictum" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getGoodsList_GetGoodsList_test_getGoodsListNew_type.coverage" NAME="Unittests for getGoodsList.GetGoodsList.test_getGoodsListNew_type Coverage Results" MODIFIED="1640070518935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getSignupOption_GetSignupOption_test_getSignupOption_noType.coverage" NAME="Unittests for getSignupOption.GetSignupOption.test_getSignupOption_noType Coverage Results" MODIFIED="1639554397836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getOrderList_GetOrderList_test_getOrderList.coverage" NAME="Unittests for getOrderList.GetOrderList.test_getOrderList Coverage Results" MODIFIED="1640583769173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/order" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_addReceive_AddReceive_test_saveReceive_errorMobile.coverage" NAME="Unittests for addReceive.AddReceive.test_saveReceive_errorMobile Coverage Results" MODIFIED="1640328231803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/receive" />
+    <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_wikiDictum_WikiDictum_test_wikiDictum_dailyword.coverage" NAME="Unittests for wikiDictum.WikiDictum.test_wikiDictum_dailyword Coverage Results" MODIFIED="1641366803633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/wikiDictum" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getMonthPlan_UserPlanList_test_getMonthPlan_noYear.coverage" NAME="Unittests for getMonthPlan.UserPlanList.test_getMonthPlan_noYear Coverage Results" MODIFIED="1640067703324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/plan" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$run.coverage" NAME="run Coverage Results" MODIFIED="1641365310419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getcolumndetail_ColumnDetail_test_columnDetail_noId.coverage" NAME="Unittests for getcolumndetail.ColumnDetail.test_columnDetail_noId Coverage Results" MODIFIED="1639029271435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/course" />
@@ -1545,6 +1755,7 @@
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getGoodsDetail_GetGoodsDetail_test_getGoodsDetail_noId.coverage" NAME="Unittests for getGoodsDetail.GetGoodsDetail.test_getGoodsDetail_noId Coverage Results" MODIFIED="1640072198613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_in_subValuate_py.coverage" NAME="Unittests in subValuate.py Coverage Results" MODIFIED="1639644041288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/courseevaluate" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_keListAll_KeListAll_test_keListAll.coverage" NAME="Unittests for keListAll.KeListAll.test_keListAll Coverage Results" MODIFIED="1639030712029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
+    <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_wikiDictum_WikiDictum_test_wikiDictum_dailyword_page.coverage" NAME="Unittests for wikiDictum.WikiDictum.test_wikiDictum_dailyword_page Coverage Results" MODIFIED="1641368289013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/wikiDictum" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getGoodsDetail_GetGoodsDetail_test_getGoodsDetail_noToken.coverage" NAME="Unittests for getGoodsDetail.GetGoodsDetail.test_getGoodsDetail_noToken Coverage Results" MODIFIED="1640072105066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getReceiveList_GetReceiveListBase_test_getGoodsDetail.coverage" NAME="Unittests for getReceiveList.GetReceiveListBase.test_getGoodsDetail Coverage Results" MODIFIED="1640072661306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/receive" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_addReceive_AddReceive_test_saveReceive.coverage" NAME="Unittests for addReceive.AddReceive.test_saveReceive Coverage Results" MODIFIED="1640329067392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/GoodsSystem/receive" />
@@ -1561,6 +1772,7 @@
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getUserCertificate_GetUserCertificate_test_course_load.coverage" NAME="Unittests for getUserCertificate.GetUserCertificate.test_course_load Coverage Results" MODIFIED="1639558289452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getUserCertificate_GetUserCertificate_test_GetUserCertificate.coverage" NAME="Unittests for getUserCertificate.GetUserCertificate.test_GetUserCertificate Coverage Results" MODIFIED="1639558027716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_course_Usecourses_test_usecourses_sel_type_certificate_passed.coverage" NAME="Unittests for course.Usecourses.test_usecourses_sel_type_certificate_passed Coverage Results" MODIFIED="1639037080864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
+    <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_wikiDictum_WikiDictum_test_wikiDictum_afamous.coverage" NAME="Unittests for wikiDictum.WikiDictum.test_wikiDictum_afamous Coverage Results" MODIFIED="1641367729695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/wikiDictum" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_getCourseevaluate_Getcourseevaluate_test_getUserInfo_person.coverage" NAME="Unittests for getCourseevaluate.Getcourseevaluate.test_getUserInfo_person Coverage Results" MODIFIED="1639637746186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/courseevaluate" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_subValuate_Subcourseevaluate_test_sub.coverage" NAME="Unittests for subValuate.Subcourseevaluate.test_sub Coverage Results" MODIFIED="1639643426050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/courseevaluate" />
     <SUITE FILE_PATH="coverage/InterfaceAutomationTest$Unittests_for_course_Usecourses_test_usecourses_newSignup.coverage" NAME="Unittests for course.Usecourses.test_usecourses_newSignup Coverage Results" MODIFIED="1639037506512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/ketang/user" />
